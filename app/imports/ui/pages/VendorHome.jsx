@@ -11,11 +11,11 @@ const VendorHome = () => (
 
       <Col xs={8} className="d-flex flex-column justify-content-center">
         <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
+          <Card.Img variant="top" src="https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/holoholo_small.jpg" />
           <Card.Body>
-            <Card.Title>Card Title</Card.Title>
+            <Card.Title>Vendor example name</Card.Title>
             <Card.Text>
-              example
+              example text for vendor
             </Card.Text>
             <Button variant="primary">Go somewhere</Button>
           </Card.Body>
