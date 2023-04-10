@@ -5,24 +5,27 @@
 :root {
   --matr-navbar-bg: #024731;
   --matr-navbar-bg-rgb: 2, 71, 49;
+  --matr-navbar-text-color: white;
+  --matr-navbar-highlight-text: khaki;
+}
+body {
+  --bs-dark: var(--matr-navbar-bg);
+  --bs-light-rgb: var(--matr-navbar-bg-rgb);
 }
 
-/* Change bootstrap variable values.
- See https://getbootstrap.com/docs/5.2/customize/css-variables/
- */
-body {
-  --bs-light-rgb: var(--matr-navbar-bg-rgb);
+body .navbar {
+  --bs-navbar-active-color: var(--matr-navbar-highlight-text);
+  --bs-navbar-brand-color: var(--matr-navbar-text-color);
+  --bs-navbar-brand-hover-color: var(--matr-navbar-highlight-text);
+  --bs-navbar-color: var(--matr-navbar-text-color);
+  --bs-navbar-hover-color: var(--matr-navbar-highlight-text);
+}
+
+footer, footer a {
+  color: var(--matr-navbar-text-color);
 }
 
 /* Set the alert background on the signin and signup pages. */
 #signin-page .alert-light, #signup-page .alert-light {
   --bs-alert-bg: var(--matr-navbar-bg);
-}
-
-/* Define custom styles */
-.gray-background {
-  background-color: var(--matr-navbar-bg);
-  color: var(--bs-dark);
-  padding-top: 10px;
-  padding-bottom: 20px;
 }
