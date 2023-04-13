@@ -1,19 +1,35 @@
 import React from 'react';
-import { Col, Container, Image, Row } from 'react-bootstrap';
+import { Carousel, Col, Container, Image, Row } from 'react-bootstrap';
 
 /* A simple static component to render some text for the landing page. */
 const Landing = () => (
-  <Container id="landing-page" fluid className="py-3">
-    <Row className="align-middle text-center">
-      <Col xs={4}>
-        <Image roundedCircle src="/images/meteor-logo.png" width="150px" />
+  <Container id="landing-page" fluid className="justify-content-center d-flex">
+    <Row className="text-center">
+      <Col>
+        <Carousel>
+          <Carousel.Item>
+            <Image src="images/carousel-images/GatewayCafe.png" />
+            <Carousel.Caption>
+              <h3>Gateway Cafe</h3>
+              <p>Gateway Cafe offers Breakfast and Lunch during the week.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <Image src="images/carousel-images/HaleAlohaCafe.png" />
+            <Carousel.Caption>
+              <h3>Hale Aloha Café</h3>
+              <p>Hale Aloha Café serves your favorite comfort foods and cuisine influenced by global flavors. </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <Image src="images/carousel-images/CampusCenterFoodCourt.png" />
+            <Carousel.Caption>
+              <h3>Campus Center Food Court</h3>
+              <p>The Campus Center Food Court offers a variety of food including plate lunches, bentos, grab-and-go salads and wraps, burgers, and more!</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
       </Col>
-
-      <Col xs={8} className="d-flex flex-column justify-content-center">
-        <h1>Welcome to this template</h1>
-        <p>Now get to work and modify this app!</p>
-      </Col>
-
     </Row>
   </Container>
 );
