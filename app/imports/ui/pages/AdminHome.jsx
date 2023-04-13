@@ -1,21 +1,60 @@
 import React from 'react';
-import { Col, Container, Image, Row } from 'react-bootstrap';
+import { Meteor } from 'meteor/meteor';
+import { Col, Container, Row } from 'react-bootstrap';
+import { useTracker } from 'meteor/react-meteor-data';
+import LoadingSpinner from '../components/LoadingSpinner';
+import RestaurantAdmin from '../components/RestaurantAdmin';
+import { Stuffs } from '../../api/stuff/Stuff';
 
-/* A simple static component to render some text for the landing page. */
-const Landing = () => (
-  <Container id="landing-page" fluid className="py-3">
-    <Row className="align-middle text-center">
-      <Col xs={4}>
-        <Image roundedCircle src="/images/meteor-logo.png" width="150px" />
-      </Col>
+/* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+const AdminHome = () => {
+  // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
+  const { ready } = useTracker(() => {
+    // Note that this subscription will get cleaned up
+    // when your component is unmounted or deps change.
+    // Get access to Stuff documents.
+    const subscription = Meteor.subscribe(Stuffs.userPublicationName);
+    // Determine if the subscription is ready
+    const rdy = subscription.ready();
+    // Get the Stuff documents
+    const stuffItems = Stuffs.collection.find({}).fetch();
+    return {
+      stuffs: stuffItems,
+      ready: rdy,
+    };
+  }, []);
 
-      <Col xs={8} className="d-flex flex-column justify-content-center">
-        <h1>Welcome to this template</h1>
-        <p>THIS IS THE ADMIN SECTION</p>
-      </Col>
+  const restaurants = [{
+    restaurant: 'Food #1', owner: 'Nicolas', tags: 'Japanese', days: 'Monday - Friday',
+    times: '2:00 PM - 11:00 PM',
+    logo: 'Future Image', specials1: 'Noodles', specials2: 'Chicken', specials3: 'Beef',
+  },
+  {
+    restaurant: 'Food #2', owner: 'Dustin', tags: 'Indian', days: 'Monday - Friday',
+    times: '2:00 PM - 11:00 PM',
+    logo: 'Future Image', specials1: 'Noodles', specials2: 'Chicken', specials3: 'Beef',
+  },
+  {
+    restaurant: 'Food #3', owner: 'Raymond', tags: 'American', days: 'Monday - Friday',
+    times: '2:00 PM - 11:00 PM',
+    logo: 'Future Image', specials1: 'Noodles', specials2: 'Chicken', specials3: 'Beef',
+  },
+  ];
 
-    </Row>
-  </Container>
-);
+  return (ready ? (
+    <Container className="py-3">
+      <Row className="justify-content-center">
+        <Col md={7}>
+          <Col className="text-center">
+            <h2>Restaurants</h2>
+          </Col>
+          <Row xs={1} md={2} lg={3} className="g-4">
+            {restaurants.map((restaurant, index) => (<Col key={index}><RestaurantAdmin restaurant={restaurant} /></Col>)) }
+          </Row>
+        </Col>
+      </Row>
+    </Container>
+  ) : <LoadingSpinner />);
+};
 
-export default Landing;
+export default AdminHome;

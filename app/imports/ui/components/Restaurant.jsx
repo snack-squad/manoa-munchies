@@ -7,23 +7,20 @@ const Restaurant = ({ restaurant }) => (
   <Card style={{ width: '18rem' }}>
     <Card.Img variant="top" src={restaurant.logo} />
     <Card.Body>
+
       <Card.Title>{restaurant.restaurant}</Card.Title>
       <Card.Subtitle className="mb-2 text-muted">{restaurant.days}</Card.Subtitle>
       <Card.Subtitle className="mb-2 text-muted">{restaurant.times}</Card.Subtitle>
+      <Card.Subtitle className="mb-2 text-muted">Tags: {restaurant.tags}</Card.Subtitle>
+      <Card.Subtitle className="mb-2 text-muted">Owner: {restaurant.owner}</Card.Subtitle>
 
       <Card.Title>Specials</Card.Title>
       <ListGroup className="list-group-flush">
-        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+        <ListGroup.Item>{restaurant.specials1}</ListGroup.Item>
+        <ListGroup.Item>{restaurant.specials1}</ListGroup.Item>
+        <ListGroup.Item>{restaurant.specials3}</ListGroup.Item>
       </ListGroup>
 
-
-      <Card.Text>
-        Some quick example text to build on the card title and make up the
-        bulk of the card's content.
-      </Card.Text>
-      <Button variant="primary">Go somewhere</Button>
     </Card.Body>
   </Card>
 );
@@ -32,13 +29,16 @@ const Restaurant = ({ restaurant }) => (
 Restaurant.propTypes = {
   restaurant: PropTypes.shape({
     restaurant: PropTypes.string,
+    owner: PropTypes.string,
     tags: PropTypes.string,
     days: PropTypes.string,
     times: PropTypes.string,
     logo: PropTypes.string,
-    specials: PropTypes.string,
+    specials1: PropTypes.string,
+    specials2: PropTypes.string,
+    specials3: PropTypes.string,
     // _id: PropTypes.string,
   }).isRequired,
 };
 
-export default Contact;
+export default Restaurant;

@@ -21,7 +21,6 @@ import VendorHome from '../pages/VendorHome';
 import AdminHome from '../pages/AdminHome';
 import AddRestaurant from '../pages/AddRestaurant';
 
-
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
   const { ready } = useTracker(() => {

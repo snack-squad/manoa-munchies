@@ -21,11 +21,8 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto justify-content-start">
-            {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-              <Nav.Link id="list-stuff-admin-nav" as={NavLink} to="/admin-home" key="admin-home">Admin Home</Nav.Link>
-            ) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? ([
-              <Nav.Link id="list-stuff-admin-nav" as={NavLink} to="/admin" key="admin">Admin</Nav.Link>,
+              <Nav.Link id="admin-home-nav" as={NavLink} to="/admin-home" key="admin-home">Admin Home</Nav.Link>,
               <Nav.Link id="add-restaurant-nav" as={NavLink} to="/addrestaurant" key="addrestaurant">Add Restaurant</Nav.Link>,
             ]) : ''}
           </Nav>
