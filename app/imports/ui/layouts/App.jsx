@@ -19,6 +19,7 @@ import NotAuthorized from '../pages/NotAuthorized';
 import LoadingSpinner from '../components/LoadingSpinner';
 import VendorHome from '../pages/VendorHome';
 import UserHome from '../pages/UserHome';
+import AddRestaurant from '../pages/AddRestaurant';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -40,6 +41,7 @@ const App = () => {
           <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
           <Route path="/vendorhome" element={<ProtectedRoute><VendorHome /></ProtectedRoute>} />
           <Route path="/user-home" element={<ProtectedRoute><UserHome /></ProtectedRoute>} />
+          <Route path="/addrestaurant" element={<ProtectedRoute><AddRestaurant /></ProtectedRoute>} />
           <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><AddStuff /></ProtectedRoute>} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditStuff /></ProtectedRoute>} />
