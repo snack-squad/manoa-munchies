@@ -29,3 +29,7 @@ footer, footer a {
 #signin-page .alert-light, #signup-page .alert-light {
   --bs-alert-bg: var(--matr-navbar-bg);
 }
+
+.carousel-caption{
+  background-color:rgba(0,0,0,0.5);
+}
