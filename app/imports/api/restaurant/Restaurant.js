@@ -2,7 +2,7 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
 /**
- * The RestaurantCollection. It encapsulates state and variable values for stuff.
+ * The RestaurantCollection. It encapsulates state and variable values for restaurants.
  */
 class RestaurantCollection {
   constructor() {

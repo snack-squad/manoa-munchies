@@ -48,7 +48,7 @@ const AdminHome = () => {
           <Col className="text-center">
             <h2>Restaurants</h2>
           </Col>
-          <Row xs={1} md={2} lg={3} className="g-4">
+          <Row className="px-5">
             {restaurants.map((restaurant, index) => (<Col key={index}><RestaurantAdmin restaurant={restaurant} /></Col>)) }
           </Row>
         </Col>

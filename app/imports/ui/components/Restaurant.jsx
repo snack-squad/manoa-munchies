@@ -12,7 +12,6 @@ const Restaurant = ({ restaurant }) => (
       <Card.Subtitle className="mb-2 text-muted">{restaurant.days}</Card.Subtitle>
       <Card.Subtitle className="mb-2 text-muted">{restaurant.times}</Card.Subtitle>
       <Card.Subtitle className="mb-2 text-muted">Tags: {restaurant.tags}</Card.Subtitle>
-      <Card.Subtitle className="mb-2 text-muted">Owner: {restaurant.owner}</Card.Subtitle>
 
       <Card.Title>Specials</Card.Title>
       <ListGroup className="list-group-flush">
@@ -29,7 +28,6 @@ const Restaurant = ({ restaurant }) => (
 Restaurant.propTypes = {
   restaurant: PropTypes.shape({
     restaurant: PropTypes.string,
-    owner: PropTypes.string,
     tags: PropTypes.string,
     days: PropTypes.string,
     times: PropTypes.string,
