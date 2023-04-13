@@ -14,6 +14,7 @@ import NotFound from '../pages/NotFound';
 import SignUp from '../pages/SignUp';
 import SignOut from '../pages/SignOut';
 import NavBar from '../components/NavBar';
+import NavBar2 from '../components/NavBar2';
 import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -34,6 +35,7 @@ const App = () => {
     <Router>
       <div className="d-flex flex-column min-vh-100">
         <NavBar />
+        <NavBar2 />
         <Routes>
           <Route exact path="/" element={<Landing />} />
           <Route path="/signin" element={<SignIn />} />
