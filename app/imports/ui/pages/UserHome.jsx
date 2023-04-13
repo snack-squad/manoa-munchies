@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Row, Image, Card, Button } from 'react-bootstrap';
+import { Col, Container, Row, Card, Button } from 'react-bootstrap';
 
 /* After the user clicks the "SignOut" link in the NavBar, log them out and display this page. */
 const UserHome = () => (
