@@ -56,10 +56,10 @@ const SignUp = ({ location }) => {
               </Card.Body>
             </Card>
           </AutoForm>
-          <Alert variant="light">
+          <Alert variant="light" style={{ color: 'white' }}>
             Already have an account? Login
             {' '}
-            <Link to="/signin">here</Link>
+            <Link to="/signin" style={{ color: 'white' }}>here</Link>
           </Alert>
           {error === '' ? (
             ''
