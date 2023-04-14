@@ -10,9 +10,7 @@
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
   ],
-  
-  "monti": {
-    "appId": "Z6e2Hty5RXz7zF2dG",
-    "appSecret": "a6ac17ff-916c-47d0-b7a3-614eea171260"
-  }
+  "defaultRestaurant": [
+    {"restaurant:":  "L&L Hawaiian Barbecue", "tags": "Burger", "owner":  "Paradise Palms", "days": "Monday – Friday", "times": "7:00am – 4:30pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/ll_small.jpg", "specials": "Chicken Katsu", "menuitems": "https://manoa.hawaii.edu/food/ll-hawaiian-barbecue/" }
+  ]
 }
