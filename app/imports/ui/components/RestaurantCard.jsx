@@ -29,8 +29,8 @@ const RestaurantCard = ({ restaurantCard }) => (
 RestaurantCard.propTypes = {
   restaurantCard: PropTypes.shape({
     restaurant: PropTypes.string,
-    owner: PropTypes.string,
     tags: PropTypes.string,
+    owner: PropTypes.string,
     days: PropTypes.string,
     times: PropTypes.string,
     logo: PropTypes.string,

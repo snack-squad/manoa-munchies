@@ -4,6 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Restaurant } from '../../api/restaurant/Restaurant';
+import RestaurantCard from '../components/RestaurantCard';
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 const VendorHome = () => {
@@ -12,7 +13,7 @@ const VendorHome = () => {
     // Note that this subscription will get cleaned up
     // when your component is unmounted or deps change.
     // Get access to Stuff documents.
-    const subscription = Meteor.subscribe(Restaurant.userPublicationName);
+    const subscription = Meteor.subscribe(Restaurant.adminPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready();
     // Get the Contact documents
@@ -32,7 +33,7 @@ const VendorHome = () => {
             <h2>List restaurants</h2>
           </Col>
           <Row xs={1} md={2} lg={3} className="g-4">
-            {restaurant.map((restaurants) => (<Col key={restaurants._id}><Restaurant restaurants={restaurants} /></Col>))}
+            {restaurant.map((restaurantCard) => (<Col key={restaurantCard._id}><RestaurantCard restaurantCard={restaurantCard} /></Col>))}
           </Row>
         </Col>
       </Row>
