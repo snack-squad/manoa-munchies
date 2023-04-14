@@ -15,9 +15,7 @@ const Restaurant = ({ restaurant }) => (
 
       <Card.Title>Specials</Card.Title>
       <ListGroup className="list-group-flush">
-        <ListGroup.Item>{restaurant.specials1}</ListGroup.Item>
-        <ListGroup.Item>{restaurant.specials1}</ListGroup.Item>
-        <ListGroup.Item>{restaurant.specials3}</ListGroup.Item>
+        <ListGroup.Item>{restaurant.specials}</ListGroup.Item>
       </ListGroup>
 
     </Card.Body>
@@ -29,12 +27,11 @@ Restaurant.propTypes = {
   restaurant: PropTypes.shape({
     restaurant: PropTypes.string,
     tags: PropTypes.string,
+    owner: PropTypes.string,
     days: PropTypes.string,
     times: PropTypes.string,
     logo: PropTypes.string,
-    specials1: PropTypes.string,
-    specials2: PropTypes.string,
-    specials3: PropTypes.string,
+    specials: PropTypes.string,
     // _id: PropTypes.string,
   }).isRequired,
 };

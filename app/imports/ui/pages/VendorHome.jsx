@@ -1,29 +1,44 @@
 import React from 'react';
-import { Col, Container, Image, Row, Card, Button } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
+import { Meteor } from 'meteor/meteor';
+import { useTracker } from 'meteor/react-meteor-data';
+import LoadingSpinner from '../components/LoadingSpinner';
+import { Restaurant } from '../../api/restaurant/Restaurant';
+import RestaurantCard from '../components/RestaurantCard';
 
-/* A simple static component to render some text for the landing page. */
-const VendorHome = () => (
-  <Container id="landing-page" fluid className="py-3">
-    <Row className="align-middle text-center">
-      <Col xs={4}>
-        <Image roundedCircle src="/images/meteor-logo.png" width="150px" />
-      </Col>
+/* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+const VendorHome = () => {
+  // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
+  const { ready, restaurant } = useTracker(() => {
+    // Note that this subscription will get cleaned up
+    // when your component is unmounted or deps change.
+    // Get access to Stuff documents.
+    const subscription = Meteor.subscribe(Restaurant.adminPublicationName);
+    // Determine if the subscription is ready
+    const rdy = subscription.ready();
+    // Get the Contact documents
+    const restaurantItems = Restaurant.collection.find({}).fetch();
+    return {
+      restaurant: restaurantItems,
+      ready: rdy,
+    };
+  }, []);
 
-      <Col xs={8} className="d-flex flex-column justify-content-center">
-        <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/holoholo_small.jpg" />
-          <Card.Body>
-            <Card.Title>Vendor example name</Card.Title>
-            <Card.Text>
-              example text for vendor
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-          </Card.Body>
-        </Card>
-      </Col>
-
-    </Row>
-  </Container>
-);
+  /* A simple static component to render some text for the landing page. */
+  return (ready ? (
+    <Container className="py-3">
+      <Row className="justify-content-center">
+        <Col md={7}>
+          <Col className="text-center">
+            <h2>List restaurants</h2>
+          </Col>
+          <Row xs={1} md={2} lg={3} className="g-4">
+            {restaurant.map((restaurantCard) => (<Col key={restaurantCard._id}><RestaurantCard restaurantCard={restaurantCard} /></Col>))}
+          </Row>
+        </Col>
+      </Row>
+    </Container>
+  ) : <LoadingSpinner />);
+};
 
 export default VendorHome;
