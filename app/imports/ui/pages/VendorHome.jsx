@@ -1,6 +1,9 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import Restaurant from "../components/Restaurant";
+import { Meteor } from 'meteor/meteor';
+import { useTracker } from 'meteor/react-meteor-data';
+import LoadingSpinner from '../components/LoadingSpinner';
+import { Restaurant } from '../../api/restaurant/Restaurant';
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 const VendorHome = () => {
@@ -20,20 +23,20 @@ const VendorHome = () => {
     };
   }, []);
 
-/* A simple static component to render some text for the landing page. */
+  /* A simple static component to render some text for the landing page. */
   return (ready ? (
-      <Container className="py-3">
-        <Row className="justify-content-center">
-          <Col md={7}>
-            <Col className="text-center">
-              <h2>List Restaurant</h2>
-            </Col>
-            <Row xs={1} md={2} lg={3} className="g-4">
-              {restaurant.map((restaurant) => (<Col key={restaurant._id}><Restaurant restaurant={restaurant} /></Col>))}
-            </Row>
+    <Container className="py-3">
+      <Row className="justify-content-center">
+        <Col md={7}>
+          <Col className="text-center">
+            <h2>List restaurants</h2>
           </Col>
-        </Row>
-      </Container>
+          <Row xs={1} md={2} lg={3} className="g-4">
+            {restaurant.map((restaurants) => (<Col key={restaurants._id}><Restaurant restaurants={restaurants} /></Col>))}
+          </Row>
+        </Col>
+      </Row>
+    </Container>
   ) : <LoadingSpinner />);
 };
 

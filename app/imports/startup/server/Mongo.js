@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
-import { Restaurant} from "../../api/restaurant/Restaurant";
+import { Restaurant } from '../../api/restaurant/Restaurant';
 
 /* eslint-disable no-console */
 
@@ -20,7 +20,7 @@ if (Stuffs.collection.find().count() === 0) {
 
 const addRestaurant = (restaurant) => {
   console.log(`  Adding: ${restaurant.restaurant} (${restaurant.owner})`);
-  Stuffs.collection.insert(restaurant);
+  Restaurant.collection.insert(restaurant);
 };
 
 // Initialize the StuffsCollection if empty.
