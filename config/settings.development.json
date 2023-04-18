@@ -11,6 +11,11 @@
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
   ],
+
+  "defaultFavorites": [
+    { "email": "john@foo.com", "items": [{"restaurant": "L&L Hawaiian Barbecue","name": "Burger"}]}
+  ],
+
   "defaultRestaurant": [{"restaurant": "L&L Hawaiian Barbecue", "tags": "Burger", "owner":  "john@foo.com", "days": "Monday – Friday", "times": "7:00am – 4:30pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/ll_small.jpg", "specials": "Chicken Katsu", "menuitems": "https://manoa.hawaii.edu/food/ll-hawaiian-barbecue/"
   },
     {"restaurant": "Holoholo Grill", "tags": "sushi", "owner":  "admin@foo.com", "days": "Monday – Friday", "times": "8:00am – 3:00pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/holoholo_small.jpg", "specials": "sushi", "menuitems": "https://manoa.hawaii.edu/food/holoholo-grill/"
