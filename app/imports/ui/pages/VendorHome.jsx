@@ -4,7 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Restaurant } from '../../api/restaurant/Restaurant';
-import RestaurantCard from '../components/RestaurantCard';
+import RestaurantVendor from '../components/RestaurantVendor';
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 const VendorHome = () => {
@@ -30,10 +30,10 @@ const VendorHome = () => {
       <Row className="justify-content-center">
         <Col md={7}>
           <Col className="text-center">
-            <h2>List restaurants</h2>
+            <h2>List Restaurants</h2>
           </Col>
-          <Row xs={1} md={2} lg={3} className="g-4">
-            {restaurant.map((restaurantCard) => (<Col key={restaurantCard._id}><RestaurantCard restaurantCard={restaurantCard} /></Col>))}
+          <Row className="g-4">
+            {restaurant.map((restaurantVendor) => (<Col key={restaurantVendor._id}><RestaurantVendor restaurantVendor={restaurantVendor} /></Col>))}
           </Row>
         </Col>
       </Row>
