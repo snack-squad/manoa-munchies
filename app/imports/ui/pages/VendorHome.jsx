@@ -30,7 +30,7 @@ const VendorHome = () => {
       <Row className="justify-content-center">
         <Col md={7}>
           <Col className="text-center">
-            <h2>List Restaurants</h2>
+            <h2>Here Are Your Restaurants</h2>
           </Col>
           <Row className="g-4">
             {restaurant.map((restaurantVendor) => (<Col key={restaurantVendor._id}><RestaurantVendor restaurantVendor={restaurantVendor} /></Col>))}
