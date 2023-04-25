@@ -1,27 +1,15 @@
 import React from 'react';
 import swal from 'sweetalert';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, HiddenField, LongTextField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { useParams } from 'react-router';
-import SimpleSchema from 'simpl-schema';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Restaurant } from '../../api/restaurant/Restaurant';
 
-// Create a schema to specify the structure of the data to appear in the form.
-const formSchema = new SimpleSchema({
-  restaurant: String,
-  tags: String,
-  days: String,
-  times: String,
-  logo: String,
-  specials: String,
-  menu: String,
-});
-
-const bridge = new SimpleSchema2Bridge(formSchema);
+const bridge = new SimpleSchema2Bridge(Restaurant.schema);
 
 /* Renders the EditStuff page for editing a single document. */
 const EditRestaurant = () => {
@@ -31,7 +19,7 @@ const EditRestaurant = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { doc, ready } = useTracker(() => {
     // Get access to Contact documents.
-    const subscription = Meteor.subscribe(Restaurant.vendorPublicationName);
+    const subscription = Meteor.subscribe(Restaurant.adminPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready();
     // Get the document
@@ -44,8 +32,8 @@ const EditRestaurant = () => {
   // console.log('EditContact', doc, ready);
   // On successful submit, insert the data.
   const submit = (data) => {
-    const { restaurant, tags, days, times, logo, specials, menu, owner } = data;
-    Restaurant.collection.update(_id, { $set: { restaurant, tags, days, times, logo, specials, menu, owner } }, (error) => (error ?
+    const { restaurant, tags, owner, days, times, logo, specials, menu } = data;
+    Restaurant.collection.update(_id, { $set: { restaurant, tags, owner, days, times, logo, specials, menu } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Item updated successfully', 'success')));
   };
@@ -53,13 +41,20 @@ const EditRestaurant = () => {
   return ready ? (
     <Container className="py-3">
       <Row className="justify-content-center">
-        <Col xs={10}>
+        <Col xs={5}>
           <Col className="text-center"><h2>Edit Restaurant</h2></Col>
           <AutoForm schema={bridge} onSubmit={data => submit(data)} model={doc}>
             <Card>
               <Card.Body>
-                <LongTextField name="restaurant" />
-                <LongTextField name="tags" />
+                <Row>
+                  <Col>
+                    <TextField name="restaurant" />
+                  </Col>
+                  <Col>
+                    <TextField name="tags" />
+                  </Col>
+                </Row>
+
                 <Row>
                   <Col>
                     <TextField name="days" />
@@ -67,14 +62,15 @@ const EditRestaurant = () => {
                   <Col>
                     <TextField name="times" />
                   </Col>
-                  <Col>
-                    <TextField name="logo" />
-                  </Col>
                 </Row>
-                <LongTextField name="menu" />
+
+                <TextField name="logo" />
+                <TextField name="specials" />
+                <TextField name="menu" />
+                <TextField name="owner" />
+
                 <SubmitField value="Submit" />
                 <ErrorsField />
-                <HiddenField name="owner" />
               </Card.Body>
             </Card>
           </AutoForm>
