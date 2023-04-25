@@ -16,8 +16,6 @@ const RestaurantVendor = ({ restaurantVendor }) => (
       <Card.Title>Specials</Card.Title>
       <ListGroup className="list-group-flush">
         <ListGroup.Item>{restaurantVendor.specials}</ListGroup.Item>
-        <ListGroup.Item>{restaurantVendor.specials}</ListGroup.Item>
-        <ListGroup.Item>{restaurantVendor.specials}</ListGroup.Item>
       </ListGroup>
 
     </Card.Body>
