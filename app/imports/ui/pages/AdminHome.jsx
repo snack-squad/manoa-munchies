@@ -4,6 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Restaurant } from '../../api/restaurant/Restaurant';
+
 import RestaurantAdmin from '../components/RestaurantAdmin';
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
@@ -18,6 +19,7 @@ const AdminHome = () => {
     const rdy = subscription.ready();
     // Get the Contact documents
     const restaurantItems = Restaurant.collection.find({}).fetch();
+
     return {
       restaurant: restaurantItems,
       ready: rdy,
@@ -30,7 +32,7 @@ const AdminHome = () => {
       <Row className="justify-content-center">
         <Col md={7}>
           <Col className="text-center">
-            <h2>Here Are Your Restaurants</h2>
+            <h2>Here Are All Restaurants</h2>
           </Col>
           <Row className="g-4">
             {restaurant.map((restaurantAdmin) => (<Col key={restaurantAdmin._id}><RestaurantAdmin restaurantAdmin={restaurantAdmin} /></Col>))}

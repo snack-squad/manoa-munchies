@@ -13,7 +13,7 @@
   ],
   "defaultRestaurant": [
     {"restaurant": "L&L Hawaiian Barbecue", "tags": "Burger", "owner":  "john@foo.com", "days": "Monday – Friday", "times": "7:00am – 4:30pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/ll_small.jpg", "specials": "Chicken Katsu", "menu": "https://manoa.hawaii.edu/food/ll-hawaiian-barbecue/"},
-    {"restaurant": "Holoholo Grill", "tags": "sushi", "owner":  "admin@foo.com", "days": "Monday – Friday", "times": "8:00am – 3:00pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/holoholo_small.jpg", "specials": "sushi", "menu": "https://manoa.hawaii.edu/food/holoholo-grill/"
-    }
+    {"restaurant": "Holoholo Grill", "tags": "sushi", "owner":  "admin@foo.com", "days": "Monday – Friday", "times": "8:00am – 3:00pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/holoholo_small.jpg", "specials": "sushi", "menu": "https://manoa.hawaii.edu/food/holoholo-grill/"},
+    {"restaurant": "Dunkin’ Donuts", "tags": "Pastry", "owner":  "vendor@foo.com", "days": "Monday – Friday", "times": "7:00am – 4:30pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/dunkin_small.jpg", "specials": "Vanilla Sprinkle Donut", "menu": "https://manoa.hawaii.edu/food/dunkin/"}
   ]
 }

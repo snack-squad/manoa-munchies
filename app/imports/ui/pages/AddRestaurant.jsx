@@ -15,7 +15,7 @@ const formSchema = new SimpleSchema({
   times: String,
   logo: String,
   specials: String,
-  menuitems: String,
+  menu: String,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -25,10 +25,10 @@ const AddRestaurant = () => {
 
   // On submit, insert the data.
   const submit = (data, formRef) => {
-    const { restaurant, tags, days, times, logo, specials, menuitems } = data;
+    const { restaurant, tags, days, times, logo, specials, menu } = data;
     const owner = Meteor.user().username;
     Restaurant.collection.insert(
-      { restaurant, tags, days, times, logo, specials, menuitems, owner },
+      { restaurant, tags, days, times, logo, specials, menu, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -70,7 +70,7 @@ const AddRestaurant = () => {
 
                 <TextField name="logo" />
                 <TextField name="specials" />
-                <TextField name="menuitems" />
+                <TextField name="menu" />
 
                 <SubmitField value="Submit" />
                 <ErrorsField />
