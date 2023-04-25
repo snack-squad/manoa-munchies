@@ -8,6 +8,7 @@ import { navBar } from './navbar.component';
 /** Credentials for one of the sample users defined in settings.development.json. */
 const credentials = { username: 'john@foo.com', password: 'changeme' };
 const credentialsVendor = { username: 'vendor@foo.com', password: 'changeme' };
+const credentialsAdmin = { username: 'admin@foo.com', password: 'changeme' };
 
 fixture('meteor-application-template-react localhost test with default db')
   .page('http://localhost:3000');
@@ -20,6 +21,18 @@ test.only('Test the Vendor Home page', async (testController) => {
   await navBar.gotoSignInPage(testController);
   await signinPage.signin(testController, credentialsVendor.username, credentialsVendor.password);
   await navBar.gotoVendorHomePage(testController);
+});
+
+test.only('Test the Admin Home page', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentialsAdmin.username, credentialsAdmin.password);
+  await navBar.gotoAdminHomePage(testController);
+});
+
+test.only('Test the Add Restaurant page', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentialsAdmin.username, credentialsAdmin.password);
+  await navBar.gotoAddRestaurantPage(testController);
 });
 
 test('Test that signin and signout work', async (testController) => {
