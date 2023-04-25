@@ -1,4 +1,4 @@
-name: snack-squad
+name: ci-snack-squad
 
 on:
   push:
