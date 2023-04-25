@@ -30,7 +30,7 @@ const AdminHome = () => {
   return (ready ? (
     <Container className="py-3">
       <Row className="justify-content-center">
-        <Col md={7}>
+        <Col>
           <Col className="text-center">
             <h2>Here Are All Restaurants</h2>
           </Col>
