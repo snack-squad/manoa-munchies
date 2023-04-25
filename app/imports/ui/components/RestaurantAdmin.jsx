@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, ListGroup } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 const RestaurantAdmin = ({ restaurantAdmin }) => (
@@ -17,10 +18,8 @@ const RestaurantAdmin = ({ restaurantAdmin }) => (
       <Card.Title>Specials</Card.Title>
       <ListGroup className="list-group-flush">
         <ListGroup.Item>{restaurantAdmin.specials}</ListGroup.Item>
-        <ListGroup.Item>{restaurantAdmin.specials}</ListGroup.Item>
-        <ListGroup.Item>{restaurantAdmin.specials}</ListGroup.Item>
+        <Link to={`/edit/${restaurantAdmin._id}`}>Edit</Link>
       </ListGroup>
-
     </Card.Body>
   </Card>
 );
@@ -35,7 +34,7 @@ RestaurantAdmin.propTypes = {
     times: PropTypes.string,
     logo: PropTypes.string,
     specials: PropTypes.string,
-    // _id: PropTypes.string,
+    _id: PropTypes.string,
   }).isRequired,
 };
 

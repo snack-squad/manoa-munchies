@@ -32,8 +32,8 @@ const EditRestaurant = () => {
   // console.log('EditContact', doc, ready);
   // On successful submit, insert the data.
   const submit = (data) => {
-    const { restaurant, tags, owner, days, times, logo, specials, menu } = data;
-    Restaurant.collection.update(_id, { $set: { restaurant, tags, owner, days, times, logo, specials, menu } }, (error) => (error ?
+    const { restaurant, tags, days, times, logo, specials, menu, owner } = data;
+    Restaurant.collection.update(_id, { $set: { restaurant, tags, days, times, logo, specials, menu, owner } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Item updated successfully', 'success')));
   };
