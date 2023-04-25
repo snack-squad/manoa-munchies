@@ -29,6 +29,11 @@ const Landing = () => (
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
+        <Container className="carousel-info">
+          <h1>Welcome To Snack Squad</h1>
+          <p>Here you can see what restaurants are currently open, where to find them, and how to get there.</p>
+          <p>Register now to save your favorite restaurants so the food stays at your fingertips.</p>
+        </Container>
       </Col>
     </Row>
   </Container>
