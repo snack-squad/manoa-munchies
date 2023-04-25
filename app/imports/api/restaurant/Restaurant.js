@@ -19,7 +19,7 @@ class RestaurantCollection {
       times: String,
       logo: String,
       specials: String,
-      menuitems: String,
+      menu: String,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
