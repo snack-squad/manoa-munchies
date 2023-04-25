@@ -40,7 +40,8 @@ Meteor.publish(Restaurant.adminPublicationName, function () {
 
 Meteor.publish(Restaurant.vendorPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'vendor')) {
-    return Restaurant.collection.find();
+    const username = Meteor.users.findOne(this.userId).username;
+    return Restaurant.collection.find({ owner: username });
   }
   return this.ready();
 });
