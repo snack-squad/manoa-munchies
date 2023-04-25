@@ -1,21 +1,21 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, NumField, SelectField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
-import { Stuffs } from '../../api/stuff/Stuff';
+import { Restaurant } from '../../api/restaurant/Restaurant';
 
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
-  name: String,
-  quantity: Number,
-  condition: {
-    type: String,
-    allowedValues: ['excellent', 'good', 'fair', 'poor'],
-    defaultValue: 'good',
-  },
+  restaurant: String,
+  tags: String,
+  days: String,
+  times: String,
+  logo: String,
+  specials: String,
+  menu: String,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -25,15 +25,15 @@ const AddRestaurant = () => {
 
   // On submit, insert the data.
   const submit = (data, formRef) => {
-    const { name, quantity, condition } = data;
+    const { restaurant, tags, days, times, logo, specials, menu } = data;
     const owner = Meteor.user().username;
-    Stuffs.collection.insert(
-      { name, quantity, condition, owner },
+    Restaurant.collection.insert(
+      { restaurant, tags, days, times, logo, specials, menu, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
         } else {
-          swal('Success', 'Item added successfully', 'success');
+          swal('Success', 'Restaurant added successfully', 'success');
           formRef.reset();
         }
       },
@@ -50,9 +50,28 @@ const AddRestaurant = () => {
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>
-                <TextField name="name" />
-                <NumField name="quantity" decimal={null} />
-                <SelectField name="condition" />
+                <Row>
+                  <Col>
+                    <TextField name="restaurant" />
+                  </Col>
+                  <Col>
+                    <TextField name="tags" />
+                  </Col>
+                </Row>
+
+                <Row>
+                  <Col>
+                    <TextField name="days" />
+                  </Col>
+                  <Col>
+                    <TextField name="times" />
+                  </Col>
+                </Row>
+
+                <TextField name="logo" />
+                <TextField name="specials" />
+                <TextField name="menu" />
+
                 <SubmitField value="Submit" />
                 <ErrorsField />
               </Card.Body>

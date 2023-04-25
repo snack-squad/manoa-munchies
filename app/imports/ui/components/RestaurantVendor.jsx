@@ -3,21 +3,19 @@ import PropTypes from 'prop-types';
 import { Card, ListGroup } from 'react-bootstrap';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
-const RestaurantVendor = ({ restaurant }) => (
+const RestaurantVendor = ({ restaurantVendor }) => (
   <Card style={{ width: '18rem' }}>
-    <Card.Img variant="top" src={restaurant.logo} />
+    <Card.Img variant="top" src={restaurantVendor.logo} />
     <Card.Body>
 
-      <Card.Title>{restaurant.restaurant}</Card.Title>
-      <Card.Subtitle className="mb-2 text-muted">{restaurant.days}</Card.Subtitle>
-      <Card.Subtitle className="mb-2 text-muted">{restaurant.times}</Card.Subtitle>
-      <Card.Subtitle className="mb-2 text-muted">Tags: {restaurant.tags}</Card.Subtitle>
+      <Card.Title>{restaurantVendor.restaurant}</Card.Title>
+      <Card.Subtitle className="mb-2 text-muted">{restaurantVendor.days}</Card.Subtitle>
+      <Card.Subtitle className="mb-2 text-muted">{restaurantVendor.times}</Card.Subtitle>
+      <Card.Subtitle className="mb-2 text-muted">Tags: {restaurantVendor.tags}</Card.Subtitle>
 
       <Card.Title>Specials</Card.Title>
       <ListGroup className="list-group-flush">
-        <ListGroup.Item>{restaurant.specials1}</ListGroup.Item>
-        <ListGroup.Item>{restaurant.specials1}</ListGroup.Item>
-        <ListGroup.Item>{restaurant.specials3}</ListGroup.Item>
+        <ListGroup.Item>{restaurantVendor.specials}</ListGroup.Item>
       </ListGroup>
 
     </Card.Body>
@@ -26,15 +24,13 @@ const RestaurantVendor = ({ restaurant }) => (
 
 // Require a document to be passed to this component.
 RestaurantVendor.propTypes = {
-  restaurant: PropTypes.shape({
+  restaurantVendor: PropTypes.shape({
     restaurant: PropTypes.string,
     tags: PropTypes.string,
     days: PropTypes.string,
     times: PropTypes.string,
     logo: PropTypes.string,
-    specials1: PropTypes.string,
-    specials2: PropTypes.string,
-    specials3: PropTypes.string,
+    specials: PropTypes.string,
     // _id: PropTypes.string,
   }).isRequired,
 };
