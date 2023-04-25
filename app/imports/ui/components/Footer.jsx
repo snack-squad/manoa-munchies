@@ -14,6 +14,8 @@ const Footer = () => (
         Honolulu, HI 96822
         {' '}
         <br />
+        {Date()}
+        <br />
         <a href="https://snack-squad.github.io/">
           Our Homepage
         </a>
