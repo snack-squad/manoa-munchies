@@ -5,27 +5,24 @@ import { Meteor } from 'meteor/meteor';
 import { Restaurant } from '../../api/restaurant/Restaurant';
 import LoadingSpinner from '../components/LoadingSpinner';
 import RestaurantCard from '../components/RestaurantCard';
-import { Favorites } from '../../api/favorites/Favorites';
 
 /* After the user clicks the "SignOut" link in the NavBar, log them out and display this page. */
-const UserHome = () => {
+const ListRestaurants = () => {
   const { ready, restaurant } = useTracker(() => {
-  // Note that this subscription will get cleaned up
-  // when your component is unmounted or deps change.
-  // Get access to Stuff documents.
+    // Note that this subscription will get cleaned up
+    // when your component is unmounted or deps change.
+    // Get access to Stuff documents.
     const subscription = Meteor.subscribe(Restaurant.userPublicationName);
-    const subscriptions2 = Meteor.subscribe(Favorites.userPublicationName);
     // Determine if the subscription is ready
-    const rdy = subscription.ready() && subscriptions2.ready();
+    const rdy = subscription.ready();
     // Get the Contact documents
     const restaurantItems = Restaurant.collection.find({}).fetch();
-    const favoriteItems = Favorites.collection.find({}).fetch();
     return {
       restaurant: restaurantItems,
-      favorites: favoriteItems,
       ready: rdy,
     };
   }, []);
+
   return (ready ? (
     <Container className="py-3">
       <Row className="justify-content-center">
@@ -34,7 +31,7 @@ const UserHome = () => {
             <h2>Welcome</h2>
           </Col>
           <Row className="g-4">
-            {restaurant.map((index) => (<Col><RestaurantCard restaurantCard={index} /></Col>))}
+            {restaurant.map((restaurantUser) => (<Col key={restaurantUser._id}><RestaurantCard restaurantCard={restaurantUser} /></Col>))}
           </Row>
         </Col>
       </Row>
@@ -42,4 +39,4 @@ const UserHome = () => {
   ) : <LoadingSpinner />);
 };
 
-export default UserHome;
+export default ListRestaurants;

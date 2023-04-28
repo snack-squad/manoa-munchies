@@ -13,7 +13,7 @@ class FavoritesCollection {
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       email: String,
-      items: [{ restaurant: String, name: String }],
+      restaurantID: String,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);

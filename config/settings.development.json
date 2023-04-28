@@ -13,7 +13,7 @@
   ],
 
   "defaultFavorites": [
-    { "email": "john@foo.com", "items": [{"restaurant": "L&L Hawaiian Barbecue","name": "Burger"}]}
+    { "email": "john@foo.com", "restaurantID": "L&L Hawaiian Barbecue"}
   ],
 
   "defaultRestaurant": [

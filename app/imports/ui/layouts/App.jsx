@@ -23,6 +23,7 @@ import AdminHome from '../pages/AdminHome';
 import AddRestaurant from '../pages/AddRestaurant';
 import AddFood from '../pages/AddFood';
 import EditRestaurant from '../pages/EditRestaurant';
+import ListRestaurants from '../pages/ListRestaurants';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
+          <Route path="/list-restaurants" element={<ListRestaurants />} />
           <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
           <Route path="/vendor-home" element={<ProtectedRoute><VendorHome /></ProtectedRoute>} />
           <Route path="/user-home" element={<ProtectedRoute><UserHome /></ProtectedRoute>} />

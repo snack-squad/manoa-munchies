@@ -15,13 +15,8 @@ Meteor.publish(Stuffs.userPublicationName, function () {
 });
 
 Meteor.publish(Restaurant.userPublicationName, function () {
-  if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Restaurant.collection.find({ owner: username });
-  }
-  return this.ready();
+  return Restaurant.collection.find({});
 });
-
 // Admin-level publication.
 // If logged in and with admin role, then publish all documents from all users. Otherwise publish nothing.
 Meteor.publish(Stuffs.adminPublicationName, function () {
@@ -47,11 +42,7 @@ Meteor.publish(Restaurant.vendorPublicationName, function () {
 });
 
 Meteor.publish(Favorites.userPublicationName, function () {
-  if (this.userID) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Favorites.collection.find({ name: username });
-  }
-  return this.ready();
+  return Favorites.collection.find({});
 });
 
 // alanning:roles publication
