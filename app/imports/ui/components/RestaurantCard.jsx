@@ -1,8 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, ListGroup } from 'react-bootstrap';
-import AddFavorite from './AddFavorite';
+import { Meteor } from 'meteor/meteor';
+import { Card, ListGroup, Button } from 'react-bootstrap';
+import { Restaurant } from '../../api/restaurant/Restaurant';
 
+const toggleFavorite = (id) => {
+  console.log(id);
+  Restaurant.collection.update(`${id}`, {
+    $addToSet: { favorite: Meteor.user()?.username },
+  });
+};
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 const RestaurantCard = ({ restaurantCard }) => (
   <Card style={{ width: '18rem' }}>
@@ -18,7 +25,7 @@ const RestaurantCard = ({ restaurantCard }) => (
       <ListGroup className="list-group-flush">
         <ListGroup.Item>{restaurantCard.specials}</ListGroup.Item>
       </ListGroup>
-      <AddFavorite restaurantID={restaurantCard._id} email={restaurantCard.owner} />
+      <Button onClick={() => toggleFavorite(restaurantCard._id)}> Favorite </Button>
     </Card.Body>
   </Card>
 );
@@ -34,6 +41,7 @@ RestaurantCard.propTypes = {
     logo: PropTypes.string,
     specials: PropTypes.string,
     _id: PropTypes.string,
+    favorite: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
 };
 

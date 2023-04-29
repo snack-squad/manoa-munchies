@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
+import { _ } from 'meteor/underscore';
 import { Restaurant } from '../../api/restaurant/Restaurant';
 import LoadingSpinner from '../components/LoadingSpinner';
 import RestaurantCard from '../components/RestaurantCard';
@@ -26,6 +27,7 @@ const UserHome = () => {
       ready: rdy,
     };
   }, []);
+  const restaurantFiltered = _.filter(restaurant, (iter) => iter.favorite.includes(Meteor.user()?.username));
   return (ready ? (
     <Container className="py-3">
       <Row className="justify-content-center">
@@ -34,7 +36,7 @@ const UserHome = () => {
             <h2>Welcome</h2>
           </Col>
           <Row className="g-4">
-            {restaurant.map((index) => (<Col><RestaurantCard restaurantCard={index} /></Col>))}
+            {restaurantFiltered.map((index) => (<Col><RestaurantCard restaurantCard={index} /></Col>))}
           </Row>
         </Col>
       </Row>
