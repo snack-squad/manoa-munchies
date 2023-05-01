@@ -18,13 +18,20 @@ class RestaurantCollection {
       days: String,
       times: String,
       logo: String,
-      specials: String,
       menu: String,
+      location: String,
       favorite: {
         type: Array,
         optional: true,
       },
       'favorite.$': String,
+      specials: {
+        type: Array,
+        optional: true,
+      },
+      'specials.$': String,
+      'specials.$.name': String,
+      'specials.$.date': String,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
