@@ -5,8 +5,8 @@ import { Meteor } from 'meteor/meteor';
 import { _ } from 'meteor/underscore';
 import { Restaurant } from '../../api/restaurant/Restaurant';
 import LoadingSpinner from '../components/LoadingSpinner';
-import RestaurantCard from '../components/RestaurantCard';
 import { Favorites } from '../../api/favorites/Favorites';
+import RestaurantCardFavorite from '../components/RestaurantCardFavorite';
 
 /* After the user clicks the "SignOut" link in the NavBar, log them out and display this page. */
 const UserHome = () => {
@@ -31,12 +31,12 @@ const UserHome = () => {
   return (ready ? (
     <Container className="py-3">
       <Row className="justify-content-center">
-        <Col md={7}>
+        <Col md={12}>
           <Col className="text-center">
-            <h2>Welcome</h2>
+            <h2>Here are your favorite restaurants!</h2>
           </Col>
           <Row className="g-4">
-            {restaurantFiltered.map((index) => (<Col><RestaurantCard restaurantCard={index} /></Col>))}
+            {restaurantFiltered.map((index) => (<Col><RestaurantCardFavorite restaurantCard={index} /></Col>))}
           </Row>
         </Col>
       </Row>
