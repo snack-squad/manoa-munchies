@@ -23,11 +23,15 @@ const ListRestaurants = () => {
       ready: rdy,
     };
   }, []);
-  const restaurantParadise = _.filter(restaurant, (iter) => iter.location.includes('Paradise Palms Café'));
-  const restaurantFoodTruck = _.filter(restaurant, (iter) => iter.location.includes('Food Truck Row'));
-  const restaurantCampusCenter = _.filter(restaurant, (iter) => iter.location.includes('Campus Center'));
-  const restaurantOthers = _.filter(restaurant, (iter) => iter.location.includes('Shidler College, 1st Floor') || iter.location.includes('2445 Campus Rd Honolulu') || iter.location.includes('2563 Dole St') ||
+  let restaurantParadise = _.filter(restaurant, (iter) => iter.location.includes('Paradise Palms Café'));
+  restaurantParadise = _.reject(restaurantParadise, (iter) => iter.favorite.includes(Meteor.user()?.username));
+  let restaurantFoodTruck = _.filter(restaurant, (iter) => iter.location.includes('Food Truck Row'));
+  restaurantFoodTruck = _.reject(restaurantFoodTruck, (iter) => iter.favorite.includes(Meteor.user()?.username));
+  let restaurantCampusCenter = _.filter(restaurant, (iter) => iter.location.includes('Campus Center'));
+  restaurantCampusCenter = _.reject(restaurantCampusCenter, (iter) => iter.favorite.includes(Meteor.user()?.username));
+  let restaurantOthers = _.filter(restaurant, (iter) => iter.location.includes('Shidler College, 1st Floor') || iter.location.includes('2445 Campus Rd Honolulu') || iter.location.includes('2563 Dole St') ||
       iter.location.includes('2573 Dole St') || iter.location.includes('2585 Dole St'));
+  restaurantOthers = _.reject(restaurantOthers, (iter) => iter.favorite.includes(Meteor.user()?.username));
   return (ready ? (
     <Container className="py-1">
       <Row className="justify-content-center">
