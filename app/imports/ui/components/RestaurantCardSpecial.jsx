@@ -1,18 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Meteor } from 'meteor/meteor';
 import { _ } from 'meteor/underscore';
 import { Card } from 'react-bootstrap';
-import swal from 'sweetalert';
-import { Restaurant } from '../../api/restaurant/Restaurant';
 
-const toggleFavorite = (id) => {
-  // console.log(id);
-  Restaurant.collection.update(`${id}`, {
-    $addToSet: { favorite: Meteor.user()?.username },
-  });
-  swal('Success', 'Restaurant added successfully to favorites', 'success');
-};
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 const RestaurantCardSpecial = ({ restaurantCard }) => (
   <Card style={{ width: '18rem' }}>
