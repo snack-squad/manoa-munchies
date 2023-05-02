@@ -23,6 +23,7 @@ const ListRestaurants = () => {
       ready: rdy,
     };
   }, []);
+  let finalFilter;
   let restaurantParadise = _.filter(restaurant, (iter) => iter.location.includes('Paradise Palms Café'));
   restaurantParadise = _.reject(restaurantParadise, (iter) => iter.favorite.includes(Meteor.user()?.username));
   let restaurantFoodTruck = _.filter(restaurant, (iter) => iter.location.includes('Food Truck Row'));
@@ -32,11 +33,9 @@ const ListRestaurants = () => {
   let restaurantOthers = _.filter(restaurant, (iter) => iter.location.includes('Other'));
   restaurantOthers = _.reject(restaurantOthers, (iter) => iter.favorite.includes(Meteor.user()?.username));
   const toggleSearch = (event) => {
-    const searchInclude = event;
-    restaurantParadise = _.filter(restaurantParadise, (iter) => iter.restaurant.includes(searchInclude));
-    restaurantFoodTruck = _.filter(restaurantFoodTruck, (iter) => iter.restaurant.includes(searchInclude));
-    restaurantOthers = _.filter(restaurantOthers, (iter) => iter.restaurant.includes(searchInclude));
+    finalFilter = _.filter(restaurantParadise, (iter) => iter.restaurant.includes(event));
     console.log('it worked');
+    return finalFilter;
   };
   return (ready ? (
     <Container className="py-1">
@@ -60,6 +59,15 @@ const ListRestaurants = () => {
               </Button>
             </InputGroup>
           </Col>
+
+          {_.size(finalFilter) !== 0 ? ([
+            <Col className="text-center">
+              <h2>Searched</h2>
+            </Col>,
+            <Row className="g-4">
+              {finalFilter.map((restaurantUser) => (<Col key={restaurantUser._id}><RestaurantCard restaurantCard={restaurantUser} /></Col>))}
+            </Row>,
+          ]) : ''}
 
           {_.size(restaurantParadise) !== 0 ? ([
             <Col className="text-center">
