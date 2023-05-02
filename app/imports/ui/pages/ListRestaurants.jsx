@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Row, InputGroup, Form, Button } from 'react-bootstrap';
+import { Col, Container, Row, InputGroup, Form } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
 import { _ } from 'meteor/underscore';
@@ -32,10 +32,6 @@ const ListRestaurants = () => {
   restaurantCampusCenter = _.reject(restaurantCampusCenter, (iter) => iter.favorite.includes(Meteor.user()?.username));
   let restaurantOthers = _.filter(restaurant, (iter) => iter.location.includes('Other'));
   restaurantOthers = _.reject(restaurantOthers, (iter) => iter.favorite.includes(Meteor.user()?.username));
-  const toggleSearch = (event) => {
-    const finalFilter = _.filter(restaurantParadise, (iter) => iter.restaurant.includes(event.toString()));
-    return finalFilter;
-  };
 
   let myEvent = '';
   return (ready ? (
