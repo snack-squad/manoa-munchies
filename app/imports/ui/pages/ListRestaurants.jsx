@@ -48,7 +48,7 @@ const ListRestaurants = () => {
   return (ready ? (
     <Container className="py-1">
       <Row className="justify-content-center">
-        <Col md={12}>
+        <Col xl={10}>
           <Col className="text-center">
             <h2>Welcome</h2>
             <FormControl
