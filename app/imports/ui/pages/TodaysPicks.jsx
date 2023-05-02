@@ -23,15 +23,16 @@ const TodaysPicks = () => {
       ready: rdy,
     };
   }, []);
-  const today = 'Monday';
-  const picks = _.filter(restaurant, (iter) => iter.specials.date.include(today));
+
+  console.log(Date());
+  const fullDate = Date().split(' ');
+  const picks = _.filter(restaurant, (dish) => _.some(dish.specials, (special) => special.date === `${fullDate[0]}day`));
   return (ready ? (
     <Container className="py-1">
       <Row className="justify-content-center">
         <Col md={12}>
           <Col className="text-center">
-            {/* eslint-disable-next-line react/no-unescaped-entities */}
-            <h2>Today's Picks</h2>
+            <h2>Today&apos;s Picks</h2>
           </Col>
           <Row className="g-4">
             {picks.map((restaurantUser) => (<Col key={restaurantUser._id}><RestaurantCard restaurantCard={restaurantUser} /></Col>))}
