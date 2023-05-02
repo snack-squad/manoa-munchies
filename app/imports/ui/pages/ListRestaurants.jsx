@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Row, InputGroup, Form } from 'react-bootstrap';
+import { Col, Container, Row, InputGroup, Form, Button } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
 import { _ } from 'meteor/underscore';
@@ -48,10 +48,12 @@ const ListRestaurants = () => {
                 onKeyUp={(event) => {
                   if (event.key === 'Enter') {
                     myEvent = event.target.value;
+                    console.log(myEvent);
+
                   }
                 }}
               />
-              <Link to={`/search-result/${myEvent}`}>Edit</Link>
+              <Link onChange={} to={`/search-result/${myEvent}`}>Edit</Link>
             </InputGroup>
           </Col>
 
