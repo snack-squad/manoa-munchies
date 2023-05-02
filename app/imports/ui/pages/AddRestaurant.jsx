@@ -21,7 +21,10 @@ const formSchema = new SimpleSchema({
     allowedValues: ['Paradise Palms Café', 'Food Truck Row', 'Campus Center', 'Other'],
     defaultValue: 'Other',
   },
-  other: String,
+  other: {
+    type: String,
+    optional: true,
+  },
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
