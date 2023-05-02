@@ -24,15 +24,14 @@ const TodaysPicks = () => {
     };
   }, []);
 
-  console.log(Date());
   const fullDate = Date().split(' ');
-  const picks = _.filter(restaurant, (dish) => _.some(dish.specials, (special) => special.date === `${fullDate[0]}day`));
+  const picks = _.filter(restaurant, (dish) => _.some(dish.specials, (special) => special.date === `${fullDate[0]}`));
   return (ready ? (
     <Container className="py-1">
       <Row className="justify-content-center">
         <Col md={12}>
           <Col className="text-center">
-            <h2>Today&apos;s Picks</h2>
+            <h2>Today&apos;s Picks for</h2>
           </Col>
           <Row className="g-4">
             {picks.map((restaurantUser) => (<Col key={restaurantUser._id}><RestaurantCardSpecial restaurantCard={restaurantUser} /></Col>))}
