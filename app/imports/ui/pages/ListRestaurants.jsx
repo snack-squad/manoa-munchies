@@ -1,9 +1,9 @@
-import React from 'react';
-import { Col, Container, Row, InputGroup, Form, Button } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Col, Container, Row, FormControl } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
 import { _ } from 'meteor/underscore';
-import { Link } from 'react-router-dom';
+import { debounce } from 'lodash';
 import { Restaurant } from '../../api/restaurant/Restaurant';
 import LoadingSpinner from '../components/LoadingSpinner';
 import RestaurantCard from '../components/RestaurantCard';
@@ -24,39 +24,39 @@ const ListRestaurants = () => {
       ready: rdy,
     };
   }, []);
-  let restaurantParadise = _.filter(restaurant, (iter) => iter.location.includes('Paradise Palms Café'));
-  restaurantParadise = _.reject(restaurantParadise, (iter) => iter.favorite.includes(Meteor.user()?.username));
-  let restaurantFoodTruck = _.filter(restaurant, (iter) => iter.location.includes('Food Truck Row'));
-  restaurantFoodTruck = _.reject(restaurantFoodTruck, (iter) => iter.favorite.includes(Meteor.user()?.username));
-  let restaurantCampusCenter = _.filter(restaurant, (iter) => iter.location.includes('Campus Center'));
-  restaurantCampusCenter = _.reject(restaurantCampusCenter, (iter) => iter.favorite.includes(Meteor.user()?.username));
-  let restaurantOthers = _.filter(restaurant, (iter) => iter.location.includes('Other'));
-  restaurantOthers = _.reject(restaurantOthers, (iter) => iter.favorite.includes(Meteor.user()?.username));
+  const [searchQuery, setSearchQuery] = useState([]);
+  const restaurantItems = _.filter(restaurant, (iter) => iter.restaurant.includes(searchQuery));
+  // Debounce the handleSearchQueryChange function
+  const debouncedSearch = debounce((value) => {
+    setSearchQuery(value);
+  }, 5);
 
-  let myEvent = '';
+  const handleSearchQueryChange = (event) => {
+    const value = event.target.value;
+    debouncedSearch(value);
+  };
+  let restaurantParadise = _.filter(restaurantItems, (iter) => iter.location.includes('Paradise Palms Café'));
+  restaurantParadise = _.reject(restaurantParadise, (iter) => iter.favorite.includes(Meteor.user()?.username));
+  let restaurantFoodTruck = _.filter(restaurantItems, (iter) => iter.location.includes('Food Truck Row'));
+  restaurantFoodTruck = _.reject(restaurantFoodTruck, (iter) => iter.favorite.includes(Meteor.user()?.username));
+  let restaurantCampusCenter = _.filter(restaurantItems, (iter) => iter.location.includes('Campus Center'));
+  restaurantCampusCenter = _.reject(restaurantCampusCenter, (iter) => iter.favorite.includes(Meteor.user()?.username));
+  let restaurantOthers = _.filter(restaurantItems, (iter) => iter.location.includes('Other'));
+  restaurantOthers = _.reject(restaurantOthers, (iter) => iter.favorite.includes(Meteor.user()?.username));
   return (ready ? (
     <Container className="py-1">
       <Row className="justify-content-center">
         <Col md={12}>
           <Col className="text-center">
             <h2>Welcome</h2>
-            <InputGroup className="mb-3">
-              <Form.Control
-                placeholder="Search for restaurants"
-                aria-label="Search for restaurants"
-                aria-describedby="basic-addon2"
-                onKeyUp={(event) => {
-                  if (event.key === 'Enter') {
-                    myEvent = event.target.value;
-                    console.log(myEvent);
-
-                  }
-                }}
-              />
-              <Link onChange={} to={`/search-result/${myEvent}`}>Edit</Link>
-            </InputGroup>
+            <FormControl
+              placeholder="Search restaurant name"
+              aria-label="Search restaurant name"
+              aria-describedby="basic-addon2"
+              value={searchQuery}
+              onInput={handleSearchQueryChange}
+            />
           </Col>
-
           {_.size(restaurantParadise) !== 0 ? ([
             <Col className="text-center">
               <h2>Paradise Palms Café</h2>
