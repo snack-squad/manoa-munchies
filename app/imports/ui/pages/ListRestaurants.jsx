@@ -32,11 +32,8 @@ const ListRestaurants = () => {
   let restaurantOthers = _.filter(restaurant, (iter) => iter.location.includes('Other'));
   restaurantOthers = _.reject(restaurantOthers, (iter) => iter.favorite.includes(Meteor.user()?.username));
   const toggleSearch = (event) => {
-    const searchInclude = event;
-    restaurantParadise = _.filter(restaurantParadise, (iter) => iter.restaurant.includes(searchInclude));
-    restaurantFoodTruck = _.filter(restaurantFoodTruck, (iter) => iter.restaurant.includes(searchInclude));
-    restaurantOthers = _.filter(restaurantOthers, (iter) => iter.restaurant.includes(searchInclude));
-    console.log('it worked');
+    const finalFilter = _.filter(restaurantParadise, (iter) => iter.restaurant.includes(event.toString()));
+    return finalFilter;
   };
   return (ready ? (
     <Container className="py-1">
@@ -51,7 +48,7 @@ const ListRestaurants = () => {
                 aria-describedby="basic-addon2"
                 onKeyUp={(event) => {
                   if (event.key === 'Enter') {
-                    toggleSearch(event);
+                    toggleSearch(event.target.value);
                   }
                 }}
               />

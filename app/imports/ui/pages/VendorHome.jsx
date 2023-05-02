@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
+import { _ } from 'meteor/underscore';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Restaurant } from '../../api/restaurant/Restaurant';
 import RestaurantVendor from '../components/RestaurantVendor';
@@ -23,7 +24,7 @@ const VendorHome = () => {
       ready: rdy,
     };
   }, []);
-
+  const restaurantVendorFilter = _.filter(restaurant, (iter) => iter.owner.includes(Meteor.user()?.username));
   /* A simple static component to render some text for the landing page. */
   return (ready ? (
     <Container className="py-3">
@@ -33,7 +34,7 @@ const VendorHome = () => {
             <h2>Here Are Your Restaurants</h2>
           </Col>
           <Row className="g-4">
-            {restaurant.map((restaurantVendor) => (<Col key={restaurantVendor._id}><RestaurantVendor restaurantVendor={restaurantVendor} /></Col>))}
+            {restaurantVendorFilter.map((restaurantVendor) => (<Col key={restaurantVendor._id}><RestaurantVendor restaurantVendor={restaurantVendor} /></Col>))}
           </Row>
         </Col>
       </Row>
