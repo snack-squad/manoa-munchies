@@ -25,8 +25,10 @@ const ListRestaurants = () => {
     };
   }, []);
   const [searchQuery, setSearchQuery] = useState([]);
-  const restaurantItems = _.filter(restaurant, (iter) => iter.restaurant.includes(searchQuery));
-  // Debounce the handleSearchQueryChange function
+  let restaurantItems = restaurant;
+  if (searchQuery.length > 0) {
+    restaurantItems = _.filter(restaurant, (iter) => iter.restaurant.toLowerCase().includes(searchQuery.toLowerCase()));
+  }
   const debouncedSearch = debounce((value) => {
     setSearchQuery(value);
   }, 5);
