@@ -14,7 +14,13 @@ const formSchema = new SimpleSchema({
   days: String,
   times: String,
   logo: String,
-  specials: String,
+  specials: {
+    type: Array,
+    optional: true,
+  },
+  'specials.$': Object,
+  'specials.$.name': String,
+  'specials.$.date': String,
   menu: String,
   location: {
     type: String,

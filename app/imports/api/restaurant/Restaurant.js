@@ -34,7 +34,7 @@ class RestaurantCollection {
         type: Array,
         optional: true,
       },
-      'specials.$': String,
+      'specials.$': Object,
       'specials.$.name': String,
       'specials.$.date': String,
     });

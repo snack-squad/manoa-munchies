@@ -24,7 +24,7 @@ const TodaysPicks = () => {
     };
   }, []);
   const today = 'Monday';
-  const picks = _.pluck(restaurant, (iter) => iter.specials.date.include(today));
+  const picks = _.filter(restaurant, (iter) => iter.specials.date.include(today));
   return (ready ? (
     <Container className="py-1">
       <Row className="justify-content-center">
