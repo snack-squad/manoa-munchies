@@ -12,11 +12,7 @@ const RestaurantVendor = ({ restaurantVendor }) => (
       <Card.Subtitle className="mb-2 text-muted">{restaurantVendor.days}</Card.Subtitle>
       <Card.Subtitle className="mb-2 text-muted">{restaurantVendor.times}</Card.Subtitle>
       <Card.Subtitle className="mb-2 text-muted">Tags: {restaurantVendor.tags}</Card.Subtitle>
-
-      <Card.Title>Specials</Card.Title>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item>{restaurantVendor.specials}</ListGroup.Item>
-      </ListGroup>
+      <ListGroup className="list-group-flush" />
 
     </Card.Body>
   </Card>
@@ -27,11 +23,16 @@ RestaurantVendor.propTypes = {
   restaurantVendor: PropTypes.shape({
     restaurant: PropTypes.string,
     tags: PropTypes.string,
+    owner: PropTypes.string,
     days: PropTypes.string,
     times: PropTypes.string,
     logo: PropTypes.string,
     specials: PropTypes.string,
-    // _id: PropTypes.string,
+    location: PropTypes.string,
+    _id: PropTypes.string,
+    menu: PropTypes.string,
+    favorite: PropTypes.arrayOf(PropTypes.string),
+    other: PropTypes.string,
   }).isRequired,
 };
 

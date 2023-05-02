@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, InputGroup, Form, Button } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
 import { _ } from 'meteor/underscore';
@@ -31,12 +31,34 @@ const ListRestaurants = () => {
   restaurantCampusCenter = _.reject(restaurantCampusCenter, (iter) => iter.favorite.includes(Meteor.user()?.username));
   let restaurantOthers = _.filter(restaurant, (iter) => iter.location.includes('Other'));
   restaurantOthers = _.reject(restaurantOthers, (iter) => iter.favorite.includes(Meteor.user()?.username));
+  const toggleSearch = (event) => {
+    const searchInclude = event;
+    restaurantParadise = _.filter(restaurantParadise, (iter) => iter.restaurant.includes(searchInclude));
+    restaurantFoodTruck = _.filter(restaurantFoodTruck, (iter) => iter.restaurant.includes(searchInclude));
+    restaurantOthers = _.filter(restaurantOthers, (iter) => iter.restaurant.includes(searchInclude));
+    console.log('it worked');
+  };
   return (ready ? (
     <Container className="py-1">
       <Row className="justify-content-center">
         <Col md={12}>
           <Col className="text-center">
             <h2>Welcome</h2>
+            <InputGroup className="mb-3">
+              <Form.Control
+                placeholder="Search for restaurants"
+                aria-label="Search for restaurants"
+                aria-describedby="basic-addon2"
+                onKeyUp={(event) => {
+                  if (event.key === 'Enter') {
+                    toggleSearch(event);
+                  }
+                }}
+              />
+              <Button variant="outline-secondary" id="button-addon2">
+                Press Enter to Search
+              </Button>
+            </InputGroup>
           </Col>
 
           {_.size(restaurantParadise) !== 0 ? ([
