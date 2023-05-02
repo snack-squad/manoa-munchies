@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
-import { Card, ListGroup, Button } from 'react-bootstrap';
+import { _ } from 'meteor/underscore';
+import { Card } from 'react-bootstrap';
 import swal from 'sweetalert';
-import { Roles } from 'meteor/alanning:roles';
 import { Restaurant } from '../../api/restaurant/Restaurant';
 
 const toggleFavorite = (id) => {
@@ -26,17 +26,8 @@ const RestaurantCardSpecial = ({ restaurantCard }) => (
       ]) : ([
         <Card.Subtitle className="mb-2 text-muted">{restaurantCard.location}</Card.Subtitle>,
       ])}
-      <Card.Subtitle className="mb-2 text-muted">
-        {
-          restaurantCard.specials.name
-        }
-      </Card.Subtitle>
+      <Card.Subtitle className="mb-2 text-muted">{_.pluck(restaurantCard.specials, 'name')}</Card.Subtitle>
       <Card.Subtitle className="mb-2 text-muted">{restaurantCard.times}</Card.Subtitle>
-      <ListGroup className="list-group-flush">
-        {Roles.userIsInRole(Meteor.userId(), 'user') ? ([
-          <Button onClick={() => toggleFavorite(restaurantCard._id)}> Favorite </Button>,
-        ]) : ''}
-      </ListGroup>
     </Card.Body>
   </Card>
 );
@@ -56,7 +47,6 @@ RestaurantCardSpecial.propTypes = {
     location: PropTypes.string,
     _id: PropTypes.string,
     menu: PropTypes.string,
-    favorite: PropTypes.arrayOf(PropTypes.string),
     other: PropTypes.string,
   }).isRequired,
 };

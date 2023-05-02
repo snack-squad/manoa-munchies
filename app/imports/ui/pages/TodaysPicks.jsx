@@ -5,7 +5,7 @@ import { Meteor } from 'meteor/meteor';
 import { _ } from 'meteor/underscore';
 import { Restaurant } from '../../api/restaurant/Restaurant';
 import LoadingSpinner from '../components/LoadingSpinner';
-import RestaurantCard from '../components/RestaurantCard';
+import RestaurantCardSpecial from '../components/RestaurantCardSpecial';
 
 /* After the user clicks the "SignOut" link in the NavBar, log them out and display this page. */
 const TodaysPicks = () => {
@@ -35,7 +35,7 @@ const TodaysPicks = () => {
             <h2>Today&apos;s Picks</h2>
           </Col>
           <Row className="g-4">
-            {picks.map((restaurantUser) => (<Col key={restaurantUser._id}><RestaurantCard restaurantCard={restaurantUser} /></Col>))}
+            {picks.map((restaurantUser) => (<Col key={restaurantUser._id}><RestaurantCardSpecial restaurantCard={restaurantUser} /></Col>))}
           </Row>
         </Col>
       </Row>
