@@ -24,6 +24,7 @@ import AddRestaurant from '../pages/AddRestaurant';
 import AddFood from '../pages/AddFood';
 import EditRestaurant from '../pages/EditRestaurant';
 import ListRestaurants from '../pages/ListRestaurants';
+import TodaysPicks from '../pages/TodaysPicks';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -47,6 +48,7 @@ const App = () => {
           <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
           <Route path="/vendor-home" element={<ProtectedRoute><VendorHome /></ProtectedRoute>} />
           <Route path="/user-home" element={<ProtectedRoute><UserHome /></ProtectedRoute>} />
+          <Route path="/todays-picks" element={<ProtectedRoute><TodaysPicks /></ProtectedRoute>} />
           <Route path="/add-restaurant" element={<ProtectedRoute><AddRestaurant /></ProtectedRoute>} />
           <Route path="/edit-restaurant" element={<ProtectedRoute><EditRestaurant /></ProtectedRoute>} />
           <Route path="/add-food" element={<ProtectedRoute><AddFood /></ProtectedRoute>} />
