@@ -29,7 +29,6 @@ RestaurantAdmin.propTypes = {
     days: PropTypes.string,
     times: PropTypes.string,
     logo: PropTypes.string,
-    specials: PropTypes.string,
     location: PropTypes.string,
     _id: PropTypes.string,
     menu: PropTypes.string,

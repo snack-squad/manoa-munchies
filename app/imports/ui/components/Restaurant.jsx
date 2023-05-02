@@ -31,7 +31,10 @@ Restaurant.propTypes = {
     days: PropTypes.string,
     times: PropTypes.string,
     logo: PropTypes.string,
-    specials: PropTypes.string,
+    specials: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string,
+      date: PropTypes.string,
+    })),
     // _id: PropTypes.string,
   }).isRequired,
 };
