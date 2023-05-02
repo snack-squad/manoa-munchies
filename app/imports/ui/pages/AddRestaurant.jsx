@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, SelectField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -16,6 +16,12 @@ const formSchema = new SimpleSchema({
   logo: String,
   specials: String,
   menu: String,
+  location: {
+    type: String,
+    allowedValues: ['Paradise Palms Café', 'Food Truck Row', 'Campus Center', 'Other'],
+    defaultValue: 'Other',
+  },
+  other: String,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -25,10 +31,10 @@ const AddRestaurant = () => {
 
   // On submit, insert the data.
   const submit = (data, formRef) => {
-    const { restaurant, tags, days, times, logo, specials, menu } = data;
+    const { restaurant, tags, days, times, logo, specials, menu, location, other } = data;
     const owner = Meteor.user().username;
     Restaurant.collection.insert(
-      { restaurant, tags, days, times, logo, specials, menu, owner },
+      { restaurant, tags, days, times, logo, specials, menu, owner, location, other },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -71,7 +77,11 @@ const AddRestaurant = () => {
                 <TextField name="logo" />
                 <TextField name="specials" />
                 <TextField name="menu" />
-
+                <SelectField name="location" />
+                <TextField
+                  name="other"
+                  help="Will appear if Location is Other. Fill in regardless as backup."
+                />
                 <SubmitField value="Submit" />
                 <ErrorsField />
               </Card.Body>

@@ -20,9 +20,12 @@ const RestaurantCard = ({ restaurantCard }) => (
       <Card.Img variant="top" src={restaurantCard.logo} />
     </a>
     <Card.Body>
-
       <Card.Title>{restaurantCard.restaurant}</Card.Title>
-      <Card.Subtitle className="mb-2 text-muted">{restaurantCard.location}</Card.Subtitle>
+      {restaurantCard.location === 'Paradise Palms Café' ? ([
+        <Card.Subtitle className="mb-2 text-muted">{restaurantCard.location}</Card.Subtitle>,
+      ]) : ([
+        <Card.Subtitle className="mb-2 text-muted">{restaurantCard.location}</Card.Subtitle>,
+      ])}
       <Card.Subtitle className="mb-2 text-muted">{restaurantCard.days}</Card.Subtitle>
       <Card.Subtitle className="mb-2 text-muted">{restaurantCard.times}</Card.Subtitle>
       <ListGroup className="list-group-flush">

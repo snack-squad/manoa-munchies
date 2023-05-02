@@ -18,66 +18,66 @@
 
   "defaultRestaurant": [
     {"restaurant": "L&L Hawaiian Barbecue", "tags": "Burger", "owner":  "john@foo.com", "days": "Monday – Friday", "times": "7:00am – 4:30pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/ll_small.jpg", "specials": "Chicken Katsu", "menu": "https://manoa.hawaii.edu/food/ll-hawaiian-barbecue/",
-      "favorite": [], "location": "Paradise Palms Café"
+      "favorite": [], "location": "Paradise Palms Café", "other": ""
     },
-    {"restaurant": "Holoholo Grill", "tags": "sushi", "owner":  "admin@foo.com", "days": "Monday – Friday", "times": "8:00am – 3:00pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/holoholo_small.jpg", "specials": "sushi", "menu": "https://manoa.hawaii.edu/food/holoholo-grill/", "favorite": [], "location": "Paradise Palms Café"},
-    {"restaurant": "Dunkin’ Donuts", "tags": "Pastry", "owner":  "vendor@foo.com", "days": "Monday – Friday", "times": "7:00am – 4:30pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/dunkin_small.jpg", "specials": "Vanilla Sprinkle Donut", "menu": "https://manoa.hawaii.edu/food/dunkin/", "favorite": [], "location": "Paradise Palms Café"},
+    {"restaurant": "Holoholo Grill", "tags": "sushi", "owner":  "admin@foo.com", "days": "Monday – Friday", "times": "8:00am – 3:00pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/holoholo_small.jpg", "specials": "sushi", "menu": "https://manoa.hawaii.edu/food/holoholo-grill/", "favorite": [], "location": "Paradise Palms Café", "other": ""},
+    {"restaurant": "Dunkin’ Donuts", "tags": "Pastry", "owner":  "vendor@foo.com", "days": "Monday – Friday", "times": "7:00am – 4:30pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/dunkin_small.jpg", "specials": "Vanilla Sprinkle Donut", "menu": "https://manoa.hawaii.edu/food/dunkin/", "favorite": [], "location": "Paradise Palms Café", "other": ""},
     {"restaurant": "Le Crepe Café", "tags": "Burger", "owner":  "john@foo.com", "days": "Monday – Friday", "times": "8:00am – 3:00pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/lecrepe_small.jpg", "specials": "Chicken Katsu", "menu": "https://manoa.hawaii.edu/food/le-crepe-cafe/",
-      "favorite": [], "location": "Paradise Palms Café"
+      "favorite": [], "location": "Paradise Palms Café", "other": ""
     },
     {"restaurant": "Lasoon", "tags": "Burger", "owner":  "john@foo.com", "days": "Monday – Friday", "times": "10:00am – 4:30pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/lasoon_small-1.jpg", "specials": "Chicken Katsu", "menu": "https://manoa.hawaii.edu/food/lasoon/",
-      "favorite": [], "location": "Paradise Palms Café"
+      "favorite": [], "location": "Paradise Palms Café", "other": ""
     },
     {"restaurant": "Panda Express", "tags": "Burger", "owner":  "john@foo.com", "days": "Monday – Friday", "times": "10:00am – 4:30pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/panda_small.jpg", "specials": "Chicken Katsu", "menu": "https://manoa.hawaii.edu/food/panda-express/",
-      "favorite": [], "location": "Paradise Palms Café"
+      "favorite": [], "location": "Paradise Palms Café", "other": ""
     },
     {"restaurant": "$5 Bento Box", "tags": "Burger", "owner":  "john@foo.com", "days": "Monday – Friday", "times": "10:00am – 2:00pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2023/02/5dollarsmall.jpg", "specials": "Chicken Katsu", "menu": "https://manoa.hawaii.edu/food/5-bento-box/",
-      "favorite": [], "location": "Food Truck Row"
+      "favorite": [], "location": "Food Truck Row", "other": ""
     },
     {"restaurant": "Evisuya", "tags": "Burger", "owner":  "john@foo.com", "days": "Monday, Tuesday, Thursday and Friday", "times": "10:00am – 2:00pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/evisuya_small.jpg", "specials": "Chicken Katsu", "menu": "https://manoa.hawaii.edu/food/evisuya/",
-      "favorite": [], "location": "Food Truck Row"
+      "favorite": [], "location": "Food Truck Row", "other": ""
     },
     {"restaurant": "Happy Belly Eatery", "tags": "Burger", "owner":  "john@foo.com", "days": "Tuesday, Wednesday, and Thursday", "times": "10:00am – 2:00pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/happybelly_small2.jpg", "specials": "Chicken Katsu", "menu": "https://manoa.hawaii.edu/food/happy-belly-eatery/",
-      "favorite": [], "location": "Food Truck Row"
+      "favorite": [], "location": "Food Truck Row", "other": ""
     },
     {"restaurant": "HI Cravings", "tags": "Burger", "owner":  "john@foo.com", "days": "Tuesday, Wednesday, Thursday and Friday", "times": "10:00am – 2:00pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/hicravings_small2.jpg", "specials": "Chicken Katsu", "menu": "https://manoa.hawaii.edu/food/hi-cravings/",
-      "favorite": [], "location": "Food Truck Row"
+      "favorite": [], "location": "Food Truck Row", "other": ""
     },
     {"restaurant": "Holoholo Bistro", "tags": "Burger", "owner":  "john@foo.com", "days": "Monday – Friday", "times": "10:00am – 2:00pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/holob_small2.jpg", "specials": "Chicken Katsu", "menu": "https://manoa.hawaii.edu/food/holoholo-bistro/",
-      "favorite": [], "location": "Food Truck Row"
+      "favorite": [], "location": "Food Truck Row", "other": ""
     },
     {"restaurant": "Raysam Hawaii", "tags": "Burger", "owner":  "john@foo.com", "days": "Monday – Friday", "times": "10:00am – 2:00pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/raysam_small2.jpg", "specials": "Chicken Katsu", "menu": "https://manoa.hawaii.edu/food/raysam-hawaii/",
-      "favorite": [], "location": "Food Truck Row"
+      "favorite": [], "location": "Food Truck Row", "other": ""
     },
     {"restaurant": "Sama Sama", "tags": "Burger", "owner":  "john@foo.com", "days": "Tuesday, Wednesday and Thursday", "times": "10:00am – 2:00pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2023/01/samasamasmall.jpg", "specials": "Chicken Katsu", "menu": "https://manoa.hawaii.edu/food/sama-sama/",
-      "favorite": [], "location": "Food Truck Row"
+      "favorite": [], "location": "Food Truck Row", "other": ""
     },
     {"restaurant": "The Bean Counter", "tags": "Burger", "owner":  "john@foo.com", "days": "Monday – Thursday and Friday", "times": "7:30am – 6:00pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2020/05/beancounter.jpg", "specials": "Chicken Katsu", "menu": "https://manoa.hawaii.edu/food/the-bean-counter/",
-      "favorite": [], "location": "Shidler College, 1st Floor"
+      "favorite": [], "location": "Other", "other": "Shidler College, 1st Floor"
     },
     {"restaurant": "Ba-Le", "tags": "Burger", "owner":  "john@foo.com", "days": "Monday - Friday", "times": "10:00am - 6:00pm", "logo": "https://content-service.sodexomyway.com/media/website8_tcm247-25205_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/", "specials": "Chicken Katsu", "menu": "https://uhm.sodexomyway.com/dining-near-me/ba-le",
-      "favorite": [], "location": "2445 Campus Rd Honolulu"
+      "favorite": [], "location": "Other", "other": "2445 Campus Rd Honolulu"
     },
     {"restaurant": "Campus Center Food Court", "tags": "Burger", "owner":  "john@foo.com", "days": "Monday - Friday", "times": "7:00am - 2:00pm", "logo": "https://content-service.sodexomyway.com/media/Sodexo-20_tcm247-32585_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/", "specials": "Chicken Katsu", "menu": "https://uhm.sodexomyway.com/dining-near-me/cc-food-court",
-      "favorite": [], "location": "Campus Center"
+      "favorite": [], "location": "Campus Center", "other": ""
     },
     {"restaurant": "Gateway Café", "tags": "Burger", "owner":  "john@foo.com", "days": "Monday - Friday", "times": "7:00am - 7:00pm", "logo": "https://content-service.sodexomyway.com/media/PizzaSMWHero_tcm247-75865_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/", "specials": "Chicken Katsu", "menu": "https://menus.sodexomyway.com/BiteMenu/Menu?menuId=29647&locationId=10230001&whereami=http://uhm.sodexomyway.com/dining-near-me/gateway-cafe",
-      "favorite": [], "location": "2563 Dole St"
+      "favorite": [], "location": "Other", "other": "2563 Dole St"
     },
     {"restaurant": "Hale Aloha Café", "tags": "Burger", "owner":  "john@foo.com", "days": "Monday - Sunday", "times": "5:00pm - 8:00pm", "logo": "https://content-service.sodexomyway.com/media/Katsu%20SMW%20Hero_tcm247-75859_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/", "specials": "Chicken Katsu", "menu": "https://menus.sodexomyway.com/BiteMenu/Menu?menuId=29650&locationId=10230001&whereami=http://uhm.sodexomyway.com/dining-near-me/hale-aloha-cafe",
-      "favorite": [], "location": "2573 Dole St"
+      "favorite": [], "location": "Other", "other": "2573 Dole St"
     },
     {"restaurant": "Jamba Juice", "tags": "Burger", "owner":  "john@foo.com", "days": "Monday - Friday", "times": "8:00am - 3:30pm", "logo": "https://content-service.sodexomyway.com/media/Sodexo-56_tcm247-32584_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/", "specials": "Chicken Katsu", "menu": "https://uhm.sodexomyway.com/dining-near-me/jamba-juice",
-      "favorite": [], "location": "Campus Center"
+      "favorite": [], "location": "Campus Center", "other": ""
     },
     {"restaurant": "Starbucks", "tags": "Burger", "owner":  "john@foo.com", "days": "Monday - Friday", "times": "8:00am - 7:00pm", "logo": "https://content-service.sodexomyway.com/media/Starbucks-Cold_1920x976_tcm247-8167_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/", "specials": "Chicken Katsu", "menu": "https://uhm.sodexomyway.com/dining-near-me/starbucks",
-      "favorite": [], "location": "Campus Center"
+      "favorite": [], "location": "Campus Center", "other": ""
     },
     {"restaurant": "B'RITO", "tags": "Burger", "owner":  "john@foo.com", "days": "Monday - Friday", "times": "8:00am - 2:00pm", "logo": "https://content-service.sodexomyway.com/media/BRITO%20BOWLS%20SMW%20HEADER_tcm247-157008_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/", "specials": "Chicken Katsu", "menu": "https://content-service.sodexomyway.com/media/BRITO%20Menus%201.5.2023_tcm247-166268.pdf?url=https://uhm.sodexomyway.com/",
-      "favorite": [], "location": "Campus Center"
+      "favorite": [], "location": "Campus Center", "other": ""
     },
     {"restaurant": "The Market", "tags": "Burger", "owner":  "john@foo.com", "days": "Monday - Sunday", "times": "4:00pm - 11:00pm", "logo": "https://content-service.sodexomyway.com/media/The%20Market%20Hero_tcm247-130737_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/", "specials": "Chicken Katsu", "menu": "https://uhm.sodexomyway.com/dining-near-me/the-market",
-      "favorite": [], "location": "2585 Dole St"
+      "favorite": [], "location": "Other", "other": "2585 Dole St"
     }
   ]
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import swal from 'sweetalert';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, SelectField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -32,8 +32,8 @@ const EditRestaurant = () => {
   // console.log('EditContact', doc, ready);
   // On successful submit, insert the data.
   const submit = (data) => {
-    const { restaurant, tags, days, times, logo, specials, menu, owner } = data;
-    Restaurant.collection.update(_id, { $set: { restaurant, tags, days, times, logo, specials, menu, owner } }, (error) => (error ?
+    const { restaurant, tags, days, times, logo, specials, menu, location, other } = data;
+    Restaurant.collection.update(_id, { $set: { restaurant, tags, days, times, logo, specials, menu, location, other } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Item updated successfully', 'success')));
   };
@@ -68,7 +68,11 @@ const EditRestaurant = () => {
                 <TextField name="specials" />
                 <TextField name="menu" />
                 <TextField name="owner" />
-
+                <SelectField name="location" />
+                <TextField
+                  name="other"
+                  help="Will appear if Location is Other"
+                />
                 <SubmitField value="Submit" />
                 <ErrorsField />
               </Card.Body>

@@ -19,7 +19,12 @@ class RestaurantCollection {
       times: String,
       logo: String,
       menu: String,
-      location: String,
+      location: {
+        type: String,
+        allowedValues: ['Paradise Palms Café', 'Food Truck Row', 'Campus Center', 'Other'],
+        defaultValue: 'Other',
+      },
+      other: String,
       favorite: {
         type: Array,
         optional: true,
