@@ -1,39 +1,46 @@
 import React from 'react';
-import { Col, Container, Row, InputGroup, Form } from 'react-bootstrap';
-import { useTracker } from 'meteor/react-meteor-data';
+import { Col, Container, Form, InputGroup, Row } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
+import { useTracker } from 'meteor/react-meteor-data';
+import { useParams } from 'react-router';
 import { _ } from 'meteor/underscore';
 import { Link } from 'react-router-dom';
-import { Restaurant } from '../../api/restaurant/Restaurant';
 import LoadingSpinner from '../components/LoadingSpinner';
+import { Restaurant } from '../../api/restaurant/Restaurant';
 import RestaurantCard from '../components/RestaurantCard';
 
-/* After the user clicks the "SignOut" link in the NavBar, log them out and display this page. */
-const ListRestaurants = () => {
-  const { ready, restaurant } = useTracker(() => {
-    // Note that this subscription will get cleaned up
-    // when your component is unmounted or deps change.
-    // Get access to Stuff documents.
+/* Renders the EditStuff page for editing a single document. */
+const SearchResults = () => {
+  // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
+  let { _myEvent } = useParams();
+  // console.log('EditContact', _id);
+  // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
+  const { restaurant, ready } = useTracker(() => {
+    // Get access to Contact documents.
     const subscription = Meteor.subscribe(Restaurant.userPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready();
-    // Get the Contact documents
+    // Get the document
     const restaurantItems = Restaurant.collection.find({}).fetch();
     return {
       restaurant: restaurantItems,
       ready: rdy,
     };
-  }, []);
-  let restaurantParadise = _.filter(restaurant, (iter) => iter.location.includes('Paradise Palms Café'));
+  }, [_myEvent]);
+  // console.log('EditContact', doc, ready);
+  // On successful submit, insert the data.
+
+  const filter = _.filter(restaurant, (iter) => iter.restaurant.includes(_myEvent));
+  let restaurantParadise = _.filter(filter, (iter) => iter.location.includes('Paradise Palms Café'));
   restaurantParadise = _.reject(restaurantParadise, (iter) => iter.favorite.includes(Meteor.user()?.username));
-  let restaurantFoodTruck = _.filter(restaurant, (iter) => iter.location.includes('Food Truck Row'));
+  let restaurantFoodTruck = _.filter(filter, (iter) => iter.location.includes('Food Truck Row'));
   restaurantFoodTruck = _.reject(restaurantFoodTruck, (iter) => iter.favorite.includes(Meteor.user()?.username));
-  let restaurantCampusCenter = _.filter(restaurant, (iter) => iter.location.includes('Campus Center'));
+  let restaurantCampusCenter = _.filter(filter, (iter) => iter.location.includes('Campus Center'));
   restaurantCampusCenter = _.reject(restaurantCampusCenter, (iter) => iter.favorite.includes(Meteor.user()?.username));
-  let restaurantOthers = _.filter(restaurant, (iter) => iter.location.includes('Other'));
+  let restaurantOthers = _.filter(filter, (iter) => iter.location.includes('Other'));
   restaurantOthers = _.reject(restaurantOthers, (iter) => iter.favorite.includes(Meteor.user()?.username));
 
-  let myEvent = '';
+  _myEvent = '';
   return (ready ? (
     <Container className="py-1">
       <Row className="justify-content-center">
@@ -47,11 +54,12 @@ const ListRestaurants = () => {
                 aria-describedby="basic-addon2"
                 onKeyUp={(event) => {
                   if (event.key === 'Enter') {
-                    myEvent = event.target.value;
+                    console.log('Hello');
+                    _myEvent = event.target.value;
                   }
                 }}
               />
-              <Link to={`/search-result/${myEvent}`}>Edit</Link>
+              <Link to={`/search-result/${_myEvent}`}>Edit</Link>
             </InputGroup>
           </Col>
 
@@ -97,4 +105,4 @@ const ListRestaurants = () => {
   ) : <LoadingSpinner />);
 };
 
-export default ListRestaurants;
+export default SearchResults;
