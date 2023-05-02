@@ -21,8 +21,8 @@ const RestaurantCard = ({ restaurantCard }) => (
     </a>
     <Card.Body>
       <Card.Title>{restaurantCard.restaurant}</Card.Title>
-      {restaurantCard.location === 'Paradise Palms Café' ? ([
-        <Card.Subtitle className="mb-2 text-muted">{restaurantCard.location}</Card.Subtitle>,
+      {restaurantCard.location === 'Other' ? ([
+        <Card.Subtitle className="mb-2 text-muted">{restaurantCard.other}</Card.Subtitle>,
       ]) : ([
         <Card.Subtitle className="mb-2 text-muted">{restaurantCard.location}</Card.Subtitle>,
       ])}
@@ -51,6 +51,7 @@ RestaurantCard.propTypes = {
     _id: PropTypes.string,
     menu: PropTypes.string,
     favorite: PropTypes.arrayOf(PropTypes.string),
+    other: PropTypes.string,
   }).isRequired,
 };
 

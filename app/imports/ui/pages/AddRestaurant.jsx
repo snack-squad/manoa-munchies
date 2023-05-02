@@ -27,7 +27,10 @@ const formSchema = new SimpleSchema({
     allowedValues: ['Paradise Palms Café', 'Food Truck Row', 'Campus Center', 'Other'],
     defaultValue: 'Other',
   },
-  other: String,
+  other: {
+    type: String,
+    optional: true,
+  },
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -39,8 +42,9 @@ const AddRestaurant = () => {
   const submit = (data, formRef) => {
     const { restaurant, tags, days, times, logo, specials, menu, location, other } = data;
     const owner = Meteor.user().username;
+    const favorite = [];
     Restaurant.collection.insert(
-      { restaurant, tags, days, times, logo, specials, menu, owner, location, other },
+      { restaurant, tags, days, times, logo, specials, menu, owner, favorite, location, other },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');

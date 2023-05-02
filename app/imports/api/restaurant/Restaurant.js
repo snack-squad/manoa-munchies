@@ -24,7 +24,10 @@ class RestaurantCollection {
         allowedValues: ['Paradise Palms Café', 'Food Truck Row', 'Campus Center', 'Other'],
         defaultValue: 'Other',
       },
-      other: String,
+      other: {
+        type: String,
+        optional: true,
+      },
       favorite: {
         type: Array,
         optional: true,
