@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, InputGroup, Form, Button } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
 import { _ } from 'meteor/underscore';
@@ -7,6 +7,9 @@ import { Restaurant } from '../../api/restaurant/Restaurant';
 import LoadingSpinner from '../components/LoadingSpinner';
 import RestaurantCard from '../components/RestaurantCard';
 
+const toggleSearch = (event) => {
+  console.log(event.target.value);
+};
 /* After the user clicks the "SignOut" link in the NavBar, log them out and display this page. */
 const ListRestaurants = () => {
   const { ready, restaurant } = useTracker(() => {
@@ -37,6 +40,21 @@ const ListRestaurants = () => {
         <Col md={12}>
           <Col className="text-center">
             <h2>Welcome</h2>
+            <InputGroup className="mb-3">
+              <Form.Control
+                placeholder="Search for restaurants"
+                aria-label="Search for restaurants"
+                aria-describedby="basic-addon2"
+                onKeyUp={(event) => {
+                  if (event.key === 'Enter') {
+                    toggleSearch(event);
+                  }
+                }}
+              />
+              <Button variant="outline-secondary" id="button-addon2">
+                Press Enter to Search
+              </Button>
+            </InputGroup>
           </Col>
 
           {_.size(restaurantParadise) !== 0 ? ([
