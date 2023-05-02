@@ -7,9 +7,6 @@ import { Restaurant } from '../../api/restaurant/Restaurant';
 import LoadingSpinner from '../components/LoadingSpinner';
 import RestaurantCard from '../components/RestaurantCard';
 
-const toggleSearch = (event) => {
-  console.log(event.target.value);
-};
 /* After the user clicks the "SignOut" link in the NavBar, log them out and display this page. */
 const ListRestaurants = () => {
   const { ready, restaurant } = useTracker(() => {
@@ -34,6 +31,13 @@ const ListRestaurants = () => {
   restaurantCampusCenter = _.reject(restaurantCampusCenter, (iter) => iter.favorite.includes(Meteor.user()?.username));
   let restaurantOthers = _.filter(restaurant, (iter) => iter.location.includes('Other'));
   restaurantOthers = _.reject(restaurantOthers, (iter) => iter.favorite.includes(Meteor.user()?.username));
+  const toggleSearch = (event) => {
+    const searchInclude = event;
+    restaurantParadise = _.filter(restaurantParadise, (iter) => iter.restaurant.includes(searchInclude));
+    restaurantFoodTruck = _.filter(restaurantFoodTruck, (iter) => iter.restaurant.includes(searchInclude));
+    restaurantOthers = _.filter(restaurantOthers, (iter) => iter.restaurant.includes(searchInclude));
+    console.log('it worked');
+  };
   return (ready ? (
     <Container className="py-1">
       <Row className="justify-content-center">
