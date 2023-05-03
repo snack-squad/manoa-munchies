@@ -65,6 +65,22 @@ class NavBar {
   async gotoAddRestaurantPage(testController) {
     await testController.click('#add-restaurant-nav');
   }
+
+  async gotoEditRestaurantPage(testController) {
+    await testController.click('#add-restaurant-nav');
+  }
+
+  async gotoListRestaurantsPage(testController) {
+    await testController.click('#list-restaurants-nav');
+  }
+
+  async gotoTodaysPicksPage(testController) {
+    await testController.click('#todays-picks-nav');
+  }
+
+  async gotoUserHomePage(testController) {
+    await testController.click('#user-home-nav');
+  }
 }
 
 export const navBar = new NavBar();
