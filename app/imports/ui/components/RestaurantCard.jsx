@@ -2,9 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
-import { Card, ListGroup, Button } from 'react-bootstrap';
+import { Roles } from 'meteor/alanning:roles';
+import { Card, ListGroup, Button, Nav } from 'react-bootstrap';
 import swal from 'sweetalert';
 import { Restaurant } from '../../api/restaurant/Restaurant';
+import { NavLink } from 'react-router-dom';
 
 const toggleFavorite = (id) => {
   // console.log(id);
@@ -35,7 +37,7 @@ const RestaurantCard = ({ restaurantCard }) => {
         <Card.Subtitle className="mb-2 text-muted">{restaurantCard.days}</Card.Subtitle>
         <Card.Subtitle className="mb-2 text-muted">{restaurantCard.times}</Card.Subtitle>
         <ListGroup className="list-group-flush">
-          {currentUser ? ([
+          {currentUser && !(Roles.userIsInRole(Meteor.userId(), 'admin') || Roles.userIsInRole(Meteor.userId(), 'vendor')) ? ([
             <Button onClick={() => toggleFavorite(restaurantCard._id)}> Favorite </Button>,
           ]) : ''}
         </ListGroup>
