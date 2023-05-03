@@ -89,7 +89,7 @@ const EditRestaurant = () => {
                       </Row>
                       <Row>
                         <Col>
-                          <SelectField name="date" showInlineError placeholder="Select a day" />
+                          <SelectField name="date" showInlineError allowedValues={['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']} placeholder="Select a day" />
                         </Col>
                       </Row>
                     </NestField>
@@ -104,7 +104,7 @@ const EditRestaurant = () => {
                 <SelectField name="location" />
                 <TextField
                   name="other"
-                  help="Will appear if Location is Other. Fill in regardless as backup."
+                  help="Will appear if Location is Other"
                 />
                 <SubmitField value="Submit" />
                 <ErrorsField />

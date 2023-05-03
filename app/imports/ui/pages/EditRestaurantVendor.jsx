@@ -13,16 +13,18 @@ import { Restaurant } from '../../api/restaurant/Restaurant';
 const bridge = new SimpleSchema2Bridge(Restaurant.schema);
 
 /* Renders the EditStuff page for editing a single document. */
-const EditRestaurant = () => {
+const EditRestaurantVendor = () => {
   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
   const { _id } = useParams();
   // console.log('EditContact', _id);
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { doc, ready } = useTracker(() => {
     // Get access to Contact documents.
-    const subscription = Meteor.subscribe(Restaurant.vendorPublicationName);
+    const subscription = Meteor.subscribe(Restaurant.adminPublicationName);
+    const subscription2 = Meteor.subscribe(Restaurant.vendorPublicationName);
     // Determine if the subscription is ready
-    const rdy = subscription.ready();
+    let rdy = subscription.ready();
+    rdy = subscription2.ready();
     // Get the document
     const document = Restaurant.collection.findOne(_id);
     return {
@@ -87,7 +89,7 @@ const EditRestaurant = () => {
                       </Row>
                       <Row>
                         <Col>
-                          <SelectField name="date" showInlineError placeholder="Select a day" />
+                          <SelectField name="date" showInlineError allowedValues={['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']} placeholder="Select a day" />
                         </Col>
                       </Row>
                     </NestField>
@@ -101,7 +103,7 @@ const EditRestaurant = () => {
                 <SelectField name="location" />
                 <TextField
                   name="other"
-                  help="Will appear if Location is Other. Fill in regardless as backup."
+                  help="Will appear if Location is Other"
                 />
                 <SubmitField value="Submit" />
                 <ErrorsField />
@@ -114,4 +116,4 @@ const EditRestaurant = () => {
   ) : <LoadingSpinner />;
 };
 
-export default EditRestaurant;
+export default EditRestaurantVendor;

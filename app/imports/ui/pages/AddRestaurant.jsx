@@ -124,7 +124,7 @@ const AddRestaurant = () => {
                 <SelectField name="location" />
                 <TextField
                   name="other"
-                  help="Will appear if Location is Other. Fill in regardless as backup."
+                  help="Will appear if Location is Other."
                 />
                 <SubmitField value="Submit" />
                 <ErrorsField />
