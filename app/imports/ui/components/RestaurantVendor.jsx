@@ -14,7 +14,7 @@ const RestaurantVendor = ({ restaurantVendor }) => (
       <Card.Subtitle className="mb-2 text-muted">{restaurantVendor.times}</Card.Subtitle>
       <Card.Subtitle className="mb-2 text-muted">Tags: {restaurantVendor.tags}</Card.Subtitle>
       <ListGroup className="list-group-flush" />
-      <Link to={`/edit/${restaurantVendor._id}`}>Edit</Link>
+      <Link to={`/edit-vendor/${restaurantVendor._id}`}>Edit</Link>
     </Card.Body>
   </Card>
 );
