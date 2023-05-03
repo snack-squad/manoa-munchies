@@ -20,11 +20,9 @@ const EditRestaurantVendor = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { doc, ready } = useTracker(() => {
     // Get access to Contact documents.
-    const subscription = Meteor.subscribe(Restaurant.adminPublicationName);
-    const subscription2 = Meteor.subscribe(Restaurant.vendorPublicationName);
+    const subscription = Meteor.subscribe(Restaurant.vendorPublicationName);
     // Determine if the subscription is ready
-    let rdy = subscription.ready();
-    rdy = subscription2.ready();
+    const rdy = subscription.ready();
     // Get the document
     const document = Restaurant.collection.findOne(_id);
     return {
