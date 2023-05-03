@@ -17,7 +17,9 @@ const RestaurantCardSpecial = ({ restaurantCard }) => (
       ]) : ([
         <Card.Subtitle className="mb-2 text-muted">{restaurantCard.location}</Card.Subtitle>,
       ])}
-      <Card.Subtitle className="mb-2 text-muted">{_.pluck(_.filter(restaurantCard, (dish) => _.some(dish.specials, (special) => special.date === `${Date().split(' ')[0]}`)), 'name')}</Card.Subtitle>
+      <Card.Subtitle className="mb-2 text-muted">
+        {restaurantCard.specials.filter((special) => special.date === `${Date().split(' ')[0]}`).map((special) => special.name).join(', ')}
+      </Card.Subtitle>
       <Card.Subtitle className="mb-2 text-muted">{restaurantCard.times}</Card.Subtitle>
     </Card.Body>
   </Card>
