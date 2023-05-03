@@ -52,20 +52,32 @@ const EditRestaurant = () => {
                     <TextField name="restaurant" />
                   </Col>
                   <Col>
-                    <TextField name="tags" />
+                    <TextField
+                      name="tags"
+                      help="What kind of food?"
+                    />
                   </Col>
                 </Row>
 
                 <Row>
                   <Col>
-                    <TextField name="days" />
+                    <TextField
+                      name="days"
+                      help="First Day - Last Day of Week."
+                    />
                   </Col>
                   <Col>
-                    <TextField name="times" />
+                    <TextField
+                      name="times"
+                      help="Open Time - Close Time"
+                    />
                   </Col>
                 </Row>
 
-                <TextField name="logo" />
+                <TextField
+                  name="logo"
+                  help="A link to your logo."
+                />
 
                 <ListField name="specials" addIcon={<Plus className="text-black" size={30} />} removeIcon={<BackspaceFill className="text-black" size={15} />}>
                   <ListItemField name="$">
@@ -75,18 +87,21 @@ const EditRestaurant = () => {
                       </Row>
                       <Row>
                         <Col>
-                          <SelectField name="date" showInlineError allowedValues={['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']} placeholder="Select a day" />
+                          <SelectField name="date" showInlineError placeholder="Select a day" />
                         </Col>
                       </Row>
                     </NestField>
                   </ListItemField>
                 </ListField>
 
-                <TextField name="menu" />
+                <TextField
+                  name="menu"
+                  help="Link to your menu online."
+                />
                 <SelectField name="location" />
                 <TextField
                   name="other"
-                  help="Will appear if Location is Other"
+                  help="Will appear if Location is Other. Fill in regardless as backup."
                 />
                 <SubmitField value="Submit" />
                 <ErrorsField />
