@@ -34,6 +34,29 @@ test.only('Test the Add Restaurant page', async (testController) => {
   await signinPage.signin(testController, credentialsAdmin.username, credentialsAdmin.password);
   await navBar.gotoAddRestaurantPage(testController);
 });
+test.only('Test the Edit Restaurant page', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentialsAdmin.username, credentialsAdmin.password);
+  await navBar.gotoEditRestaurantPage(testController);
+});
+
+test.only('Test the list Restaurant page', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.gotoListRestaurantsPage(testController);
+});
+
+test.only('Test the todays picks page', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.gotoTodaysPicksPage(testController);
+});
+
+test.only('Test the user home page', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.gotoUserHomePage(testController);
+});
 
 test('Test that signin and signout work', async (testController) => {
   await navBar.gotoSignInPage(testController);
