@@ -1,11 +1,12 @@
 import React from 'react';
 import swal from 'sweetalert';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, SelectField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, ListField, ListItemField, NestField, SelectField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { useParams } from 'react-router';
+import { BackspaceFill, Plus } from 'react-bootstrap-icons';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Restaurant } from '../../api/restaurant/Restaurant';
 
@@ -65,7 +66,22 @@ const EditRestaurant = () => {
                 </Row>
 
                 <TextField name="logo" />
-                <TextField name="specials" />
+
+                <ListField name="specials" addIcon={<Plus className="text-black" size={30} />} removeIcon={<BackspaceFill className="text-black" size={15} />}>
+                  <ListItemField name="$">
+                    <NestField>
+                      <Row>
+                        <TextField name="name" showInlineError placeholder="Special's Name" />
+                      </Row>
+                      <Row>
+                        <Col>
+                          <SelectField name="date" showInlineError allowedValues={['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']} placeholder="Select a day" />
+                        </Col>
+                      </Row>
+                    </NestField>
+                  </ListItemField>
+                </ListField>
+
                 <TextField name="menu" />
                 <TextField name="owner" />
                 <SelectField name="location" />

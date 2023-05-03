@@ -27,6 +27,12 @@
       "specials": [{
         "name": "Chicken Katsu",
         "date": "Mon"
+      },{
+        "name": "BBQ Burger",
+        "date": "Wed"
+      },{
+        "name": "Local Moco",
+        "date": "Fri"
       }],
       "menu": "https://manoa.hawaii.edu/food/holoholo-grill/",
       "favorite": [], "location": "Paradise Palms Café",
@@ -40,8 +46,14 @@
       "times": "8:00am – 3:00pm",
       "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/holoholo_small.jpg",
       "specials": [{
-        "name": "Sushi",
+        "name": "Assorted Wraps",
         "date": "Tue"
+      },{
+        "name": "Tuna Melt Panini",
+        "date": "Thu"
+      },{
+        "name": "Grilled Cheese Panini",
+        "date": "Sat"
       }],
       "menu": "https://manoa.hawaii.edu/food/holoholo-grill/",
       "favorite": [],
@@ -58,6 +70,12 @@
       "specials": [{
         "name": "Vanilla Sprinkle Donut",
         "date": "Wed"
+      },{
+        "name": "Lunch Sandwiches",
+        "date": "Fir"
+      },{
+        "name": "Iced Coffee",
+        "date": "Sun"
       }],
       "menu": "https://manoa.hawaii.edu/food/dunkin/",
       "favorite": [],
@@ -74,6 +92,12 @@
       "specials": [{
         "name": "Crepe",
         "date": "Thu"
+      },{
+        "name": "Cheese Louise",
+        "date": "Sat"
+      },{
+        "name": "Crepe Monsieur",
+        "date": "Mon"
       }],
       "menu": "https://manoa.hawaii.edu/food/le-crepe-cafe/",
       "favorite": [],
@@ -88,8 +112,14 @@
       "times": "10:00am – 4:30pm",
       "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/lasoon_small-1.jpg",
       "specials": [{
-        "name": "Sushi",
+        "name": "Daal (Lentils)",
         "date": "Fri"
+      },{
+        "name": "Chana Masala (Chickpeas)",
+        "date": "Sun"
+      },{
+        "name": "Rajma (Red Kidney beans)",
+        "date": "Tue"
       }],
       "menu": "https://manoa.hawaii.edu/food/lasoon/",
       "favorite": [],
@@ -106,6 +136,12 @@
       "specials": [{
         "name": "Orange Chicken",
         "date": "Sat"
+      },{
+        "name": "Fired Rice",
+        "date": "Mon"
+      },{
+        "name": "Kung Pao Chicken",
+        "date": "Wed"
       }],
       "menu": "https://manoa.hawaii.edu/food/panda-express/",
       "favorite": [],
@@ -120,8 +156,14 @@
       "times": "10:00am – 2:00pm",
       "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2023/02/5dollarsmall.jpg",
       "specials": [{
-        "name": "Bento Box",
+        "name": "Bento Box #1",
         "date": "Sun"
+      },{
+        "name": "Bento Box #2",
+        "date": "Tue"
+      },{
+        "name": "Bento Box #3",
+        "date": "Thu"
       }],
       "menu": "https://manoa.hawaii.edu/food/5-bento-box/",
       "favorite": [],
@@ -136,8 +178,14 @@
       "times": "10:00am – 2:00pm",
       "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/evisuya_small.jpg",
       "specials": [{
-        "name": "Sushi",
-        "date": "Tue"
+        "name": "Pork belly wrapped musubi",
+        "date": "Mon"
+      },{
+        "name": "Cold noodle",
+        "date": "Wed"
+      },{
+        "name": "Pork rice bowl",
+        "date": "Fri"
       }],
       "menu": "https://manoa.hawaii.edu/food/evisuya/",
       "favorite": [],
@@ -152,8 +200,14 @@
       "times": "10:00am – 2:00pm",
       "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/happybelly_small2.jpg",
       "specials": [{
-        "name": "Sushi",
+        "name": "Happy Mix Plate",
         "date": "Tue"
+      },{
+        "name": "Chicken Explosion",
+        "date": "Thu"
+      },{
+        "name": "Honey Sriracha Chicken",
+        "date": "Sat"
       }],
       "menu": "https://manoa.hawaii.edu/food/happy-belly-eatery/",
       "favorite": [],
@@ -167,8 +221,14 @@
       "days": "Tuesday, Wednesday, Thursday and Friday",
       "times": "10:00am – 2:00pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/hicravings_small2.jpg",
       "specials": [{
-        "name": "Sushi",
-        "date": "Tue"
+        "name": "Vegan Smoothie Bowls",
+        "date": "Wed"
+      },{
+        "name": "Acai & Pitaya Bowls",
+        "date": "Thu"
+      },{
+        "name": "Stuffed Strawberries",
+        "date": "Sat"
       }],
       "menu": "https://manoa.hawaii.edu/food/hi-cravings/",
       "favorite": [],
@@ -183,8 +243,14 @@
       "times": "10:00am – 2:00pm",
       "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/holob_small2.jpg",
       "specials": [{
-        "name": "Sushi",
-        "date": "Tue"
+        "name": "Bentos",
+        "date": "Thu"
+      },{
+        "name": "Musubi",
+        "date": "Sat"
+      },{
+        "name": "Sandwiches",
+        "date": "Mon"
       }],
       "menu": "https://manoa.hawaii.edu/food/holoholo-bistro/",
       "favorite": [],
@@ -199,7 +265,13 @@
       "times": "10:00am – 2:00pm",
       "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/raysam_small2.jpg",
       "specials": [{
-        "name": "Sushi",
+        "name": "Taco rice",
+        "date": "Fri"
+      },{
+        "name": "Omusubi",
+        "date": "Sun"
+      },{
+        "name": "Udon",
         "date": "Tue"
       }],
       "menu": "https://manoa.hawaii.edu/food/raysam-hawaii/",
@@ -215,8 +287,14 @@
       "times": "10:00am – 2:00pm",
       "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2023/01/samasamasmall.jpg",
       "specials": [{
-        "name": "Sushi",
-        "date": "Tue"
+        "name": "Drinks",
+        "date": "Sat"
+      },{
+        "name": "Boba",
+        "date": "Mon"
+      },{
+        "name": "Mango",
+        "date": "Wed"
       }],
       "menu": "https://manoa.hawaii.edu/food/sama-sama/",
       "favorite": [],
@@ -230,8 +308,14 @@
       "days": "Monday – Thursday and Friday",
       "times": "7:30am – 6:00pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2020/05/beancounter.jpg",
       "specials": [{
-        "name": "Sushi",
+        "name": "Latte",
+        "date": "Sun"
+      },{
+        "name": "Americano",
         "date": "Tue"
+      },{
+        "name": "Macchiato",
+        "date": "Thu"
       }],
       "menu": "https://manoa.hawaii.edu/food/the-bean-counter/",
       "favorite": [],
@@ -246,8 +330,14 @@
       "times": "10:00am - 6:00pm",
       "logo": "https://content-service.sodexomyway.com/media/website8_tcm247-25205_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/",
       "specials": [{
-        "name": "Sushi",
-        "date": "Tue"
+        "name": "Sandwiches",
+        "date": "Mon"
+      },{
+        "name": "Pastries",
+        "date": "Wed"
+      },{
+        "name": "Salads",
+        "date": "Fri"
       }],
       "menu": "https://uhm.sodexomyway.com/dining-near-me/ba-le",
       "favorite": [],
@@ -262,8 +352,14 @@
       "times": "7:00am - 2:00pm",
       "logo": "https://content-service.sodexomyway.com/media/Sodexo-20_tcm247-32585_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/",
       "specials": [{
-        "name": "Sushi",
+        "name": "Spam Musubi",
         "date": "Tue"
+      },{
+        "name": "Bento",
+        "date": "Thu"
+      },{
+        "name": "Burgers",
+        "date": "Sat"
       }],
       "menu": "https://uhm.sodexomyway.com/dining-near-me/cc-food-court",
       "favorite": [],
@@ -278,8 +374,14 @@
       "times": "7:00am - 7:00pm",
       "logo": "https://content-service.sodexomyway.com/media/PizzaSMWHero_tcm247-75865_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/",
       "specials": [{
-        "name": "Sushi",
-        "date": "Tue"
+        "name": "Chicken",
+        "date": "Wed"
+      },{
+        "name": "Pizza",
+        "date": "Fri"
+      },{
+        "name": "Burgers",
+        "date": "Sun"
       }],
       "menu": "https://menus.sodexomyway.com/BiteMenu/Menu?menuId=29647&locationId=10230001&whereami=http://uhm.sodexomyway.com/dining-near-me/gateway-cafe",
       "favorite": [],
@@ -294,8 +396,14 @@
       "times": "5:00pm - 8:00pm",
       "logo": "https://content-service.sodexomyway.com/media/Katsu%20SMW%20Hero_tcm247-75859_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/",
       "specials": [{
-        "name": "Sushi",
-        "date": "Tue"
+        "name": "Pizza",
+        "date": "Thu"
+      },{
+        "name": "Porkloin",
+        "date": "Sat"
+      },{
+        "name": "Salad",
+        "date": "Mon"
       }],
       "menu": "https://menus.sodexomyway.com/BiteMenu/Menu?menuId=29650&locationId=10230001&whereami=http://uhm.sodexomyway.com/dining-near-me/hale-aloha-cafe",
       "favorite": [],
@@ -310,7 +418,13 @@
       "times": "8:00am - 3:30pm",
       "logo": "https://content-service.sodexomyway.com/media/Sodexo-56_tcm247-32584_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/",
       "specials": [{
-        "name": "Sushi",
+        "name": "Smoothies",
+        "date": "Fri"
+      },{
+        "name": "Smoothies",
+        "date": "Sun"
+      },{
+        "name": "Smoothies",
         "date": "Tue"
       }],
       "menu": "https://uhm.sodexomyway.com/dining-near-me/jamba-juice",
@@ -326,8 +440,14 @@
       "times": "8:00am - 7:00pm",
       "logo": "https://content-service.sodexomyway.com/media/Starbucks-Cold_1920x976_tcm247-8167_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/",
       "specials": [{
-        "name": "Sushi",
-        "date": "Tue"
+        "name": "Iced Coffee",
+        "date": "Sat"
+      },{
+        "name": "Sandwiches",
+        "date": "Mon"
+      },{
+        "name": "Coffee",
+        "date": "Wed"
       }],
       "menu": "https://uhm.sodexomyway.com/dining-near-me/starbucks",
       "favorite": [],
@@ -342,8 +462,14 @@
       "times": "8:00am - 2:00pm",
       "logo": "https://content-service.sodexomyway.com/media/BRITO%20BOWLS%20SMW%20HEADER_tcm247-157008_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/",
       "specials": [{
-        "name": "Sushi",
+        "name": "Pork Bowl",
+        "date": "Sun"
+      },{
+        "name": "Chicken Bowl",
         "date": "Tue"
+      },{
+        "name": "Burrito Bowl",
+        "date": "Thu"
       }],
       "menu": "https://content-service.sodexomyway.com/media/BRITO%20Menus%201.5.2023_tcm247-166268.pdf?url=https://uhm.sodexomyway.com/",
       "favorite": [],
@@ -358,8 +484,14 @@
       "times": "4:00pm - 11:00pm",
       "logo": "https://content-service.sodexomyway.com/media/The%20Market%20Hero_tcm247-130737_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/",
       "specials": [{
-        "name": "Sushi",
-        "date": "Tue"
+        "name": "Snacks",
+        "date": "Mon"
+      },{
+        "name": "Macaroni and Cheese",
+        "date": "Wed"
+      },{
+        "name": "Pizza",
+        "date": "Fri"
       }],
       "menu": "https://uhm.sodexomyway.com/dining-near-me/the-market",
       "favorite": [],

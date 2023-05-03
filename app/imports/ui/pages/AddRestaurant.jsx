@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, SelectField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, SelectField, SubmitField, TextField, ListField, ListItemField, NestField } from 'uniforms-bootstrap5';
+import { Plus, BackspaceFill } from 'react-bootstrap-icons';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -20,7 +21,10 @@ const formSchema = new SimpleSchema({
   },
   'specials.$': Object,
   'specials.$.name': String,
-  'specials.$.date': String,
+  'specials.$.date': {
+    type: String,
+    allowedValues: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+  },
   menu: String,
   location: {
     type: String,
@@ -85,7 +89,22 @@ const AddRestaurant = () => {
                 </Row>
 
                 <TextField name="logo" />
-                <TextField name="specials" />
+
+                <ListField name="specials" addIcon={<Plus className="text-black" size={30} />} removeIcon={<BackspaceFill className="text-black" size={15} />}>
+                  <ListItemField name="$">
+                    <NestField>
+                      <Row>
+                        <TextField name="name" showInlineError placeholder="Special's Name" />
+                      </Row>
+                      <Row>
+                        <Col>
+                          <SelectField name="date" showInlineError placeholder="Select a day" />
+                        </Col>
+                      </Row>
+                    </NestField>
+                  </ListItemField>
+                </ListField>
+
                 <TextField name="menu" />
                 <SelectField name="location" />
                 <TextField
