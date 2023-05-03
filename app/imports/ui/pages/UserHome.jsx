@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
 import { _ } from 'meteor/underscore';
@@ -7,7 +7,6 @@ import { Restaurant } from '../../api/restaurant/Restaurant';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Favorites } from '../../api/favorites/Favorites';
 import RestaurantCardFavorite from '../components/RestaurantCardFavorite';
-import RestaurantCard from '../components/RestaurantCard';
 
 /* After the user clicks the "SignOut" link in the NavBar, log them out and display this page. */
 const UserHome = () => {
@@ -42,7 +41,7 @@ const UserHome = () => {
             </Row>,
           ]) : ([
             <Col className="text-center">
-              <h2>You have no favorites! Go to restaurants and add some and you'll see it here.</h2>
+              <h2>You have no favorites! Go to restaurants and add some and you&apos;ll see it here.</h2>
             </Col>,
           ])}
 
