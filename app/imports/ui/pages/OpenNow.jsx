@@ -17,7 +17,7 @@ const OpenNow = () => {
     const subscription = Meteor.subscribe(Restaurant.userPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready();
-    const getName = {
+    const fullNames = {
       Mon: 'Monday',
       Tue: 'Tuesday',
       Wed: 'Wednesday',
@@ -27,8 +27,12 @@ const OpenNow = () => {
       Sun: 'Sunday',
     };
     const fullDate = Date().split(' ');
+    const fullName = fullNames[fullDate[0]];
+    // const fullName = 'Sunday'; /*For Testing Purposes*/
     // Get the Contact documents
-    const restaurantItems = Restaurant.collection.find({ openDays: fullDate }).fetch();
+    const restaurantItems = Restaurant.collection.find({ openDays: fullName }).fetch();
+    console.log(fullName);
+    console.log(restaurantItems);
     return {
       restaurant: restaurantItems,
       ready: rdy,
