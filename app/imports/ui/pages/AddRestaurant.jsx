@@ -75,20 +75,32 @@ const AddRestaurant = () => {
                     <TextField name="restaurant" />
                   </Col>
                   <Col>
-                    <TextField name="tags" />
+                    <TextField
+                      name="tags"
+                      help="What kind of food?"
+                    />
                   </Col>
                 </Row>
 
                 <Row>
                   <Col>
-                    <TextField name="days" />
+                    <TextField
+                      name="days"
+                      help="First Day - Last Day of Week."
+                    />
                   </Col>
                   <Col>
-                    <TextField name="times" />
+                    <TextField
+                      name="times"
+                      help="Open Time - Close Time"
+                    />
                   </Col>
                 </Row>
 
-                <TextField name="logo" />
+                <TextField
+                  name="logo"
+                  help="A link to your logo."
+                />
 
                 <ListField name="specials" addIcon={<Plus className="text-black" size={30} />} removeIcon={<BackspaceFill className="text-black" size={15} />}>
                   <ListItemField name="$">
@@ -105,7 +117,10 @@ const AddRestaurant = () => {
                   </ListItemField>
                 </ListField>
 
-                <TextField name="menu" />
+                <TextField
+                  name="menu"
+                  help="Link to your menu online."
+                />
                 <SelectField name="location" />
                 <TextField
                   name="other"
