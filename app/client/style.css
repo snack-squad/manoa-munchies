@@ -2,6 +2,16 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700|Source+Code+Pro:300,400,500,700");
 
 /* Set up some CSS variables to theme the application. */
+@font-face {
+  font-family: 'rainbowWarrior';
+  src: url("/fonts/rainbowWarriorFont.otf");
+}
+
+.warriorFont {
+  font-family: 'rainbowWarrior', Sans-Serif;
+  font-weight: normal;
+  font-style: normal;
+}
 :root {
   --matr-navbar-bg: #024731;
   --matr-navbar-bg-rgb: 2, 71, 49;
@@ -70,3 +80,4 @@ footer, footer a {
   transform: translate(-50%, -50%);
   color: white;
 }
+
