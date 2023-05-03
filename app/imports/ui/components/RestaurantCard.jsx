@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Roles } from 'meteor/alanning:roles';
-import { Card, ListGroup, Button, Nav } from 'react-bootstrap';
+import { Card, ListGroup, Button } from 'react-bootstrap';
 import swal from 'sweetalert';
 import { Restaurant } from '../../api/restaurant/Restaurant';
-import { NavLink } from 'react-router-dom';
 
 const toggleFavorite = (id) => {
   // console.log(id);
