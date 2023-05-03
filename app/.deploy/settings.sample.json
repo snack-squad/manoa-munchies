@@ -1,7 +1,8 @@
 {
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "password": "changeme" }
+    { "email": "vendor@foo.com", "password": "changeme", "role": "vendor" },
+    { "email": "john@foo.com", "password": "changeme", "role": "user" }
   ],
 
   "defaultData": [
@@ -11,8 +12,491 @@
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
   ],
 
-  "monti": {
-    "appId": "changeme",
-    "appSecret": "changeme"
-  }
+  "defaultFavorites": [
+    { "email": "john@foo.com", "restaurantID": "L&L Hawaiian Barbecue"}
+  ],
+
+  "defaultRestaurant": [
+    {
+      "restaurant": "L&L Hawaiian Barbecue",
+      "tags": "Burger",
+      "owner": "john@foo.com",
+      "days": "Monday – Friday",
+      "times": "7:00am – 4:30pm",
+      "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/ll_small.jpg",
+      "specials": [{
+        "name": "Chicken Katsu",
+        "date": "Mon"
+      },{
+        "name": "BBQ Burger",
+        "date": "Wed"
+      },{
+        "name": "Local Moco",
+        "date": "Fri"
+      }],
+      "menu": "https://manoa.hawaii.edu/food/ll-hawaiian-barbecue/",
+      "favorite": [], "location": "Paradise Palms Café",
+      "other": ""
+    },
+    {
+      "restaurant": "Holoholo Grill",
+      "tags": "sushi",
+      "owner": "admin@foo.com",
+      "days": "Monday – Friday",
+      "times": "8:00am – 3:00pm",
+      "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/holoholo_small.jpg",
+      "specials": [{
+        "name": "Assorted Wraps",
+        "date": "Tue"
+      },{
+        "name": "Tuna Melt Panini",
+        "date": "Thu"
+      },{
+        "name": "Grilled Cheese Panini",
+        "date": "Sat"
+      }],
+      "menu": "https://manoa.hawaii.edu/food/holoholo-grill/",
+      "favorite": [],
+      "location": "Paradise Palms Café",
+      "other": ""
+    },
+    {
+      "restaurant": "Dunkin’ Donuts",
+      "tags": "Pastry",
+      "owner": "vendor@foo.com",
+      "days": "Monday – Friday",
+      "times": "7:00am – 4:30pm",
+      "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/dunkin_small.jpg",
+      "specials": [{
+        "name": "Vanilla Sprinkle Donut",
+        "date": "Wed"
+      },{
+        "name": "Lunch Sandwiches",
+        "date": "Fir"
+      },{
+        "name": "Iced Coffee",
+        "date": "Sun"
+      }],
+      "menu": "https://manoa.hawaii.edu/food/dunkin/",
+      "favorite": [],
+      "location": "Paradise Palms Café",
+      "other": ""
+    },
+    {
+      "restaurant": "Le Crepe Café",
+      "tags": "Burger",
+      "owner": "john@foo.com",
+      "days": "Monday – Friday",
+      "times": "8:00am – 3:00pm",
+      "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/lecrepe_small.jpg",
+      "specials": [{
+        "name": "Crepe",
+        "date": "Thu"
+      },{
+        "name": "Cheese Louise",
+        "date": "Sat"
+      },{
+        "name": "Crepe Monsieur",
+        "date": "Mon"
+      }],
+      "menu": "https://manoa.hawaii.edu/food/le-crepe-cafe/",
+      "favorite": [],
+      "location": "Paradise Palms Café",
+      "other": ""
+    },
+    {
+      "restaurant": "Lasoon",
+      "tags": "Burger",
+      "owner": "john@foo.com",
+      "days": "Monday – Friday",
+      "times": "10:00am – 4:30pm",
+      "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/lasoon_small-1.jpg",
+      "specials": [{
+        "name": "Daal (Lentils)",
+        "date": "Fri"
+      },{
+        "name": "Chana Masala (Chickpeas)",
+        "date": "Sun"
+      },{
+        "name": "Rajma (Red Kidney beans)",
+        "date": "Tue"
+      }],
+      "menu": "https://manoa.hawaii.edu/food/lasoon/",
+      "favorite": [],
+      "location": "Paradise Palms Café",
+      "other": ""
+    },
+    {
+      "restaurant": "Panda Express",
+      "tags": "Burger",
+      "owner": "john@foo.com",
+      "days": "Monday – Friday",
+      "times": "10:00am – 4:30pm",
+      "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/panda_small.jpg",
+      "specials": [{
+        "name": "Orange Chicken",
+        "date": "Sat"
+      },{
+        "name": "Fired Rice",
+        "date": "Mon"
+      },{
+        "name": "Kung Pao Chicken",
+        "date": "Wed"
+      }],
+      "menu": "https://manoa.hawaii.edu/food/panda-express/",
+      "favorite": [],
+      "location": "Paradise Palms Café",
+      "other": ""
+    },
+    {
+      "restaurant": "$5 Bento Box",
+      "tags": "Burger",
+      "owner": "john@foo.com",
+      "days": "Monday – Friday",
+      "times": "10:00am – 2:00pm",
+      "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2023/02/5dollarsmall.jpg",
+      "specials": [{
+        "name": "Bento Box #1",
+        "date": "Sun"
+      },{
+        "name": "Bento Box #2",
+        "date": "Tue"
+      },{
+        "name": "Bento Box #3",
+        "date": "Thu"
+      }],
+      "menu": "https://manoa.hawaii.edu/food/5-bento-box/",
+      "favorite": [],
+      "location": "Food Truck Row",
+      "other": ""
+    },
+    {
+      "restaurant": "Evisuya",
+      "tags": "Burger",
+      "owner": "john@foo.com",
+      "days": "Monday, Tuesday, Thursday and Friday",
+      "times": "10:00am – 2:00pm",
+      "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/evisuya_small.jpg",
+      "specials": [{
+        "name": "Pork belly wrapped musubi",
+        "date": "Mon"
+      },{
+        "name": "Cold noodle",
+        "date": "Wed"
+      },{
+        "name": "Pork rice bowl",
+        "date": "Fri"
+      }],
+      "menu": "https://manoa.hawaii.edu/food/evisuya/",
+      "favorite": [],
+      "location": "Food Truck Row",
+      "other": ""
+    },
+    {
+      "restaurant": "Happy Belly Eatery",
+      "tags": "Burger",
+      "owner": "john@foo.com",
+      "days": "Tuesday, Wednesday, and Thursday",
+      "times": "10:00am – 2:00pm",
+      "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/happybelly_small2.jpg",
+      "specials": [{
+        "name": "Happy Mix Plate",
+        "date": "Tue"
+      },{
+        "name": "Chicken Explosion",
+        "date": "Thu"
+      },{
+        "name": "Honey Sriracha Chicken",
+        "date": "Sat"
+      }],
+      "menu": "https://manoa.hawaii.edu/food/happy-belly-eatery/",
+      "favorite": [],
+      "location": "Food Truck Row",
+      "other": ""
+    },
+    {
+      "restaurant": "HI Cravings",
+      "tags": "Burger",
+      "owner": "john@foo.com",
+      "days": "Tuesday, Wednesday, Thursday and Friday",
+      "times": "10:00am – 2:00pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/hicravings_small2.jpg",
+      "specials": [{
+        "name": "Vegan Smoothie Bowls",
+        "date": "Wed"
+      },{
+        "name": "Acai & Pitaya Bowls",
+        "date": "Thu"
+      },{
+        "name": "Stuffed Strawberries",
+        "date": "Sat"
+      }],
+      "menu": "https://manoa.hawaii.edu/food/hi-cravings/",
+      "favorite": [],
+      "location": "Food Truck Row",
+      "other": ""
+    },
+    {
+      "restaurant": "Holoholo Bistro",
+      "tags": "Burger",
+      "owner": "john@foo.com",
+      "days": "Monday – Friday",
+      "times": "10:00am – 2:00pm",
+      "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/holob_small2.jpg",
+      "specials": [{
+        "name": "Bentos",
+        "date": "Thu"
+      },{
+        "name": "Musubi",
+        "date": "Sat"
+      },{
+        "name": "Sandwiches",
+        "date": "Mon"
+      }],
+      "menu": "https://manoa.hawaii.edu/food/holoholo-bistro/",
+      "favorite": [],
+      "location": "Food Truck Row",
+      "other": ""
+    },
+    {
+      "restaurant": "Raysam Hawaii",
+      "tags": "Burger",
+      "owner": "john@foo.com",
+      "days": "Monday – Friday",
+      "times": "10:00am – 2:00pm",
+      "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/raysam_small2.jpg",
+      "specials": [{
+        "name": "Taco rice",
+        "date": "Fri"
+      },{
+        "name": "Omusubi",
+        "date": "Sun"
+      },{
+        "name": "Udon",
+        "date": "Tue"
+      }],
+      "menu": "https://manoa.hawaii.edu/food/raysam-hawaii/",
+      "favorite": [],
+      "location": "Food Truck Row",
+      "other": ""
+    },
+    {
+      "restaurant": "Sama Sama",
+      "tags": "Burger",
+      "owner": "john@foo.com",
+      "days": "Tuesday, Wednesday and Thursday",
+      "times": "10:00am – 2:00pm",
+      "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2023/01/samasamasmall.jpg",
+      "specials": [{
+        "name": "Drinks",
+        "date": "Sat"
+      },{
+        "name": "Boba",
+        "date": "Mon"
+      },{
+        "name": "Mango",
+        "date": "Wed"
+      }],
+      "menu": "https://manoa.hawaii.edu/food/sama-sama/",
+      "favorite": [],
+      "location": "Food Truck Row",
+      "other": ""
+    },
+    {
+      "restaurant": "The Bean Counter",
+      "tags": "Burger",
+      "owner": "john@foo.com",
+      "days": "Monday – Thursday and Friday",
+      "times": "7:30am – 6:00pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2020/05/beancounter.jpg",
+      "specials": [{
+        "name": "Latte",
+        "date": "Sun"
+      },{
+        "name": "Americano",
+        "date": "Tue"
+      },{
+        "name": "Macchiato",
+        "date": "Thu"
+      }],
+      "menu": "https://manoa.hawaii.edu/food/the-bean-counter/",
+      "favorite": [],
+      "location": "Other",
+      "other": "Shidler College, 1st Floor"
+    },
+    {
+      "restaurant": "Ba-Le",
+      "tags": "Burger",
+      "owner": "john@foo.com",
+      "days": "Monday - Friday",
+      "times": "10:00am - 6:00pm",
+      "logo": "https://content-service.sodexomyway.com/media/website8_tcm247-25205_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/",
+      "specials": [{
+        "name": "Sandwiches",
+        "date": "Mon"
+      },{
+        "name": "Pastries",
+        "date": "Wed"
+      },{
+        "name": "Salads",
+        "date": "Fri"
+      }],
+      "menu": "https://uhm.sodexomyway.com/dining-near-me/ba-le",
+      "favorite": [],
+      "location": "Other",
+      "other": "2445 Campus Rd Honolulu"
+    },
+    {
+      "restaurant": "Campus Center Food Court",
+      "tags": "Burger",
+      "owner": "john@foo.com",
+      "days": "Monday - Friday",
+      "times": "7:00am - 2:00pm",
+      "logo": "https://content-service.sodexomyway.com/media/Sodexo-20_tcm247-32585_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/",
+      "specials": [{
+        "name": "Spam Musubi",
+        "date": "Tue"
+      },{
+        "name": "Bento",
+        "date": "Thu"
+      },{
+        "name": "Burgers",
+        "date": "Sat"
+      }],
+      "menu": "https://uhm.sodexomyway.com/dining-near-me/cc-food-court",
+      "favorite": [],
+      "location": "Campus Center",
+      "other": ""
+    },
+    {
+      "restaurant": "Gateway Café",
+      "tags": "Burger",
+      "owner": "john@foo.com",
+      "days": "Monday - Friday",
+      "times": "7:00am - 7:00pm",
+      "logo": "https://content-service.sodexomyway.com/media/PizzaSMWHero_tcm247-75865_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/",
+      "specials": [{
+        "name": "Chicken",
+        "date": "Wed"
+      },{
+        "name": "Pizza",
+        "date": "Fri"
+      },{
+        "name": "Burgers",
+        "date": "Sun"
+      }],
+      "menu": "https://menus.sodexomyway.com/BiteMenu/Menu?menuId=29647&locationId=10230001&whereami=http://uhm.sodexomyway.com/dining-near-me/gateway-cafe",
+      "favorite": [],
+      "location": "Other",
+      "other": "2563 Dole St"
+    },
+    {
+      "restaurant": "Hale Aloha Café",
+      "tags": "Burger",
+      "owner": "john@foo.com",
+      "days": "Monday - Sunday",
+      "times": "5:00pm - 8:00pm",
+      "logo": "https://content-service.sodexomyway.com/media/Katsu%20SMW%20Hero_tcm247-75859_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/",
+      "specials": [{
+        "name": "Pizza",
+        "date": "Thu"
+      },{
+        "name": "Porkloin",
+        "date": "Sat"
+      },{
+        "name": "Salad",
+        "date": "Mon"
+      }],
+      "menu": "https://menus.sodexomyway.com/BiteMenu/Menu?menuId=29650&locationId=10230001&whereami=http://uhm.sodexomyway.com/dining-near-me/hale-aloha-cafe",
+      "favorite": [],
+      "location": "Other",
+      "other": "2573 Dole St"
+    },
+    {
+      "restaurant": "Jamba Juice",
+      "tags": "Burger",
+      "owner": "john@foo.com",
+      "days": "Monday - Friday",
+      "times": "8:00am - 3:30pm",
+      "logo": "https://content-service.sodexomyway.com/media/Sodexo-56_tcm247-32584_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/",
+      "specials": [{
+        "name": "Smoothies",
+        "date": "Fri"
+      },{
+        "name": "Smoothies",
+        "date": "Sun"
+      },{
+        "name": "Smoothies",
+        "date": "Tue"
+      }],
+      "menu": "https://uhm.sodexomyway.com/dining-near-me/jamba-juice",
+      "favorite": [],
+      "location": "Campus Center",
+      "other": ""
+    },
+    {
+      "restaurant": "Starbucks",
+      "tags": "Burger",
+      "owner": "john@foo.com",
+      "days": "Monday - Friday",
+      "times": "8:00am - 7:00pm",
+      "logo": "https://content-service.sodexomyway.com/media/Starbucks-Cold_1920x976_tcm247-8167_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/",
+      "specials": [{
+        "name": "Iced Coffee",
+        "date": "Sat"
+      },{
+        "name": "Sandwiches",
+        "date": "Mon"
+      },{
+        "name": "Coffee",
+        "date": "Wed"
+      }],
+      "menu": "https://uhm.sodexomyway.com/dining-near-me/starbucks",
+      "favorite": [],
+      "location": "Campus Center",
+      "other": ""
+    },
+    {
+      "restaurant": "B'RITO",
+      "tags": "Burger",
+      "owner": "john@foo.com",
+      "days": "Monday - Friday",
+      "times": "8:00am - 2:00pm",
+      "logo": "https://content-service.sodexomyway.com/media/BRITO%20BOWLS%20SMW%20HEADER_tcm247-157008_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/",
+      "specials": [{
+        "name": "Pork Bowl",
+        "date": "Sun"
+      },{
+        "name": "Chicken Bowl",
+        "date": "Tue"
+      },{
+        "name": "Burrito Bowl",
+        "date": "Thu"
+      }],
+      "menu": "https://content-service.sodexomyway.com/media/BRITO%20Menus%201.5.2023_tcm247-166268.pdf?url=https://uhm.sodexomyway.com/",
+      "favorite": [],
+      "location": "Campus Center",
+      "other": ""
+    },
+    {
+      "restaurant": "The Market",
+      "tags": "Burger",
+      "owner": "john@foo.com",
+      "days": "Monday - Sunday",
+      "times": "4:00pm - 11:00pm",
+      "logo": "https://content-service.sodexomyway.com/media/The%20Market%20Hero_tcm247-130737_w808_h424_n.jpg?url=https://uhm.sodexomyway.com/",
+      "specials": [{
+        "name": "Snacks",
+        "date": "Mon"
+      },{
+        "name": "Macaroni and Cheese",
+        "date": "Wed"
+      },{
+        "name": "Pizza",
+        "date": "Fri"
+      }],
+      "menu": "https://uhm.sodexomyway.com/dining-near-me/the-market",
+      "favorite": [],
+      "location": "Other",
+      "other": "2585 Dole St"
+    }
+  ]
 }
