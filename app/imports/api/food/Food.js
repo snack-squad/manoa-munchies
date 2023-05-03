@@ -14,7 +14,7 @@ class FoodCollection {
     this.schema = new SimpleSchema({
       foodName: String,
       tags: String,
-      owner: String,
+      storeOwner: String,
       storeName: String,
       allergens: String,
       picture: String,
