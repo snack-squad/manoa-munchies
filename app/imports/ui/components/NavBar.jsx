@@ -22,14 +22,17 @@ const NavBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto justify-content-start">
             <Nav.Link id="list-restaurants-nav" as={NavLink} to="/list-restaurants" key="list-restaurants">Restaurants</Nav.Link>,
+            <Nav.Link id="open-today-nav" as={NavLink} to="/open-today" key="open-today">Open Today</Nav.Link>,
             <Nav.Link id="todays-picks-nav" as={NavLink} to="/todays-picks" key="todays-picks">Today&apos;s Picks</Nav.Link>,
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? ([
               <Nav.Link id="admin-home-nav" as={NavLink} to="/admin-home" key="admin-home">Admin Home</Nav.Link>,
               <Nav.Link id="add-restaurant-nav" as={NavLink} to="/add-restaurant" key="add-restaurant">Add Restaurant</Nav.Link>,
+              <Nav.Link id="add-food-nav" as={NavLink} to="/add-food" key="add-food">Add Food</Nav.Link>,
             ]) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'vendor') ? ([
               <Nav.Link id="vendor-home-nav" as={NavLink} to="/vendor-home" key="vendor-home">Vendor Home</Nav.Link>,
               <Nav.Link id="add-restaurant-nav" as={NavLink} to="/add-restaurant" key="add-restaurant">Add Restaurant</Nav.Link>,
+              <Nav.Link id="add-food-nav" as={NavLink} to="/add-food" key="add-food">Add Food</Nav.Link>,
             ]) : ''}
             {currentUser && !(Roles.userIsInRole(Meteor.userId(), 'admin') || Roles.userIsInRole(Meteor.userId(), 'vendor')) ? ([
               <Nav.Link id="user-home-nav" as={NavLink} to="/user-home" key="user-home">Favorites</Nav.Link>,

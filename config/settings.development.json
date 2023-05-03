@@ -36,7 +36,8 @@
       }],
       "menu": "https://manoa.hawaii.edu/food/ll-hawaiian-barbecue/",
       "favorite": [], "location": "Paradise Palms Café",
-      "other": ""
+      "other": "",
+      "openDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     },
     {
       "restaurant": "Holoholo Grill",
@@ -58,7 +59,8 @@
       "menu": "https://manoa.hawaii.edu/food/holoholo-grill/",
       "favorite": [],
       "location": "Paradise Palms Café",
-      "other": ""
+      "other": "",
+      "openDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     },
     {
       "restaurant": "Dunkin’ Donuts",
@@ -80,7 +82,8 @@
       "menu": "https://manoa.hawaii.edu/food/dunkin/",
       "favorite": [],
       "location": "Paradise Palms Café",
-      "other": ""
+      "other": "",
+      "openDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     },
     {
       "restaurant": "Le Crepe Café",
@@ -102,7 +105,8 @@
       "menu": "https://manoa.hawaii.edu/food/le-crepe-cafe/",
       "favorite": [],
       "location": "Paradise Palms Café",
-      "other": ""
+      "other": "",
+      "openDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     },
     {
       "restaurant": "Lasoon",
@@ -124,7 +128,8 @@
       "menu": "https://manoa.hawaii.edu/food/lasoon/",
       "favorite": [],
       "location": "Paradise Palms Café",
-      "other": ""
+      "other": "",
+      "openDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     },
     {
       "restaurant": "Panda Express",
@@ -146,7 +151,8 @@
       "menu": "https://manoa.hawaii.edu/food/panda-express/",
       "favorite": [],
       "location": "Paradise Palms Café",
-      "other": ""
+      "other": "",
+      "openDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     },
     {
       "restaurant": "$5 Bento Box",
@@ -168,13 +174,14 @@
       "menu": "https://manoa.hawaii.edu/food/5-bento-box/",
       "favorite": [],
       "location": "Food Truck Row",
-      "other": ""
+      "other": "",
+      "openDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     },
     {
       "restaurant": "Evisuya",
       "tags": "Burger",
       "owner": "john@foo.com",
-      "days": "Monday, Tuesday, Thursday and Friday",
+      "days": "Monday - Friday",
       "times": "10:00am – 2:00pm",
       "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/evisuya_small.jpg",
       "specials": [{
@@ -190,13 +197,14 @@
       "menu": "https://manoa.hawaii.edu/food/evisuya/",
       "favorite": [],
       "location": "Food Truck Row",
-      "other": ""
+      "other": "",
+      "openDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     },
     {
       "restaurant": "Happy Belly Eatery",
       "tags": "Burger",
       "owner": "john@foo.com",
-      "days": "Tuesday, Wednesday, and Thursday",
+      "days": "Tuesday - Thursday",
       "times": "10:00am – 2:00pm",
       "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/happybelly_small2.jpg",
       "specials": [{
@@ -212,13 +220,14 @@
       "menu": "https://manoa.hawaii.edu/food/happy-belly-eatery/",
       "favorite": [],
       "location": "Food Truck Row",
-      "other": ""
+      "other": "",
+      "openDays": ["Tuesday", "Wednesday", "Thursday"]
     },
     {
       "restaurant": "HI Cravings",
       "tags": "Burger",
       "owner": "john@foo.com",
-      "days": "Tuesday, Wednesday, Thursday and Friday",
+      "days": "Tuesday - Friday",
       "times": "10:00am – 2:00pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2022/11/hicravings_small2.jpg",
       "specials": [{
         "name": "Vegan Smoothie Bowls",
@@ -233,7 +242,8 @@
       "menu": "https://manoa.hawaii.edu/food/hi-cravings/",
       "favorite": [],
       "location": "Food Truck Row",
-      "other": ""
+      "other": "",
+      "openDays": ["Tuesday", "Wednesday", "Thursday", "Friday"]
     },
     {
       "restaurant": "Holoholo Bistro",
@@ -255,7 +265,8 @@
       "menu": "https://manoa.hawaii.edu/food/holoholo-bistro/",
       "favorite": [],
       "location": "Food Truck Row",
-      "other": ""
+      "other": "",
+      "openDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     },
     {
       "restaurant": "Raysam Hawaii",
@@ -277,13 +288,14 @@
       "menu": "https://manoa.hawaii.edu/food/raysam-hawaii/",
       "favorite": [],
       "location": "Food Truck Row",
-      "other": ""
+      "other": "",
+      "openDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     },
     {
       "restaurant": "Sama Sama",
       "tags": "Burger",
       "owner": "john@foo.com",
-      "days": "Tuesday, Wednesday and Thursday",
+      "days": "Tuesday - Thursday",
       "times": "10:00am – 2:00pm",
       "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2023/01/samasamasmall.jpg",
       "specials": [{
@@ -299,13 +311,14 @@
       "menu": "https://manoa.hawaii.edu/food/sama-sama/",
       "favorite": [],
       "location": "Food Truck Row",
-      "other": ""
+      "other": "",
+      "openDays": ["Tuesday", "Wednesday", "Thursday"]
     },
     {
       "restaurant": "The Bean Counter",
       "tags": "Burger",
       "owner": "john@foo.com",
-      "days": "Monday – Thursday and Friday",
+      "days": "Monday - Friday",
       "times": "7:30am – 6:00pm", "logo": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2020/05/beancounter.jpg",
       "specials": [{
         "name": "Latte",
@@ -320,7 +333,8 @@
       "menu": "https://manoa.hawaii.edu/food/the-bean-counter/",
       "favorite": [],
       "location": "Other",
-      "other": "Shidler College, 1st Floor"
+      "other": "Shidler College, 1st Floor",
+      "openDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     },
     {
       "restaurant": "Ba-Le",
@@ -342,7 +356,8 @@
       "menu": "https://uhm.sodexomyway.com/dining-near-me/ba-le",
       "favorite": [],
       "location": "Other",
-      "other": "2445 Campus Rd Honolulu"
+      "other": "2445 Campus Rd Honolulu",
+      "openDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     },
     {
       "restaurant": "Campus Center Food Court",
@@ -364,7 +379,8 @@
       "menu": "https://uhm.sodexomyway.com/dining-near-me/cc-food-court",
       "favorite": [],
       "location": "Campus Center",
-      "other": ""
+      "other": "",
+      "openDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     },
     {
       "restaurant": "Gateway Café",
@@ -386,7 +402,8 @@
       "menu": "https://menus.sodexomyway.com/BiteMenu/Menu?menuId=29647&locationId=10230001&whereami=http://uhm.sodexomyway.com/dining-near-me/gateway-cafe",
       "favorite": [],
       "location": "Other",
-      "other": "2563 Dole St"
+      "other": "2563 Dole St",
+      "openDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     },
     {
       "restaurant": "Hale Aloha Café",
@@ -408,7 +425,8 @@
       "menu": "https://menus.sodexomyway.com/BiteMenu/Menu?menuId=29650&locationId=10230001&whereami=http://uhm.sodexomyway.com/dining-near-me/hale-aloha-cafe",
       "favorite": [],
       "location": "Other",
-      "other": "2573 Dole St"
+      "other": "2573 Dole St",
+      "openDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     },
     {
       "restaurant": "Jamba Juice",
@@ -430,7 +448,8 @@
       "menu": "https://uhm.sodexomyway.com/dining-near-me/jamba-juice",
       "favorite": [],
       "location": "Campus Center",
-      "other": ""
+      "other": "",
+      "openDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     },
     {
       "restaurant": "Starbucks",
@@ -452,7 +471,8 @@
       "menu": "https://uhm.sodexomyway.com/dining-near-me/starbucks",
       "favorite": [],
       "location": "Campus Center",
-      "other": ""
+      "other": "",
+      "openDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     },
     {
       "restaurant": "B'RITO",
@@ -474,7 +494,8 @@
       "menu": "https://content-service.sodexomyway.com/media/BRITO%20Menus%201.5.2023_tcm247-166268.pdf?url=https://uhm.sodexomyway.com/",
       "favorite": [],
       "location": "Campus Center",
-      "other": ""
+      "other": "",
+      "openDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     },
     {
       "restaurant": "The Market",
@@ -496,7 +517,8 @@
       "menu": "https://uhm.sodexomyway.com/dining-near-me/the-market",
       "favorite": [],
       "location": "Other",
-      "other": "2585 Dole St"
+      "other": "2585 Dole St",
+      "openDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     }
   ]
 }

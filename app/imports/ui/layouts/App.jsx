@@ -26,6 +26,7 @@ import ListRestaurants from '../pages/ListRestaurants';
 import TodaysPicks from '../pages/TodaysPicks';
 import SearchResults from '../pages/SearchResults';
 import EditRestaurantVendor from '../pages/EditRestaurantVendor';
+import OpenNow from '../pages/OpenNow';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -45,6 +46,7 @@ const App = () => {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
           <Route path="/list-restaurants" element={<ListRestaurants />} />
+          <Route path="/open-today" element={<OpenNow />} />
           <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
           <Route path="/vendor-home" element={<ProtectedRoute><VendorHome /></ProtectedRoute>} />
           <Route path="/user-home" element={<ProtectedRoute><UserHome /></ProtectedRoute>} />
