@@ -21,8 +21,10 @@ const EditRestaurant = () => {
   const { doc, ready } = useTracker(() => {
     // Get access to Contact documents.
     const subscription = Meteor.subscribe(Restaurant.adminPublicationName);
+    const subscription2 = Meteor.subscribe(Restaurant.vendorPublicationName);
     // Determine if the subscription is ready
-    const rdy = subscription.ready();
+    let rdy = subscription.ready();
+    rdy = subscription2.ready();
     // Get the document
     const document = Restaurant.collection.findOne(_id);
     return {
